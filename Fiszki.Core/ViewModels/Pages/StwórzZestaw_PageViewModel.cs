@@ -12,7 +12,7 @@ namespace Fiszki.Core
      * - edytować poszczególne fiszki (dodawać/usuwać)
      * - usunąć zestaw
      */
-    internal class StwórzZestaw_PageViewModel
+    public class StwórzZestaw_PageViewModel
     {
         public List<Zestaw_ViewModel> lista_zestawów;
         public Zestaw_ViewModel nowy_zestaw;
@@ -31,13 +31,14 @@ namespace Fiszki.Core
         //metoda ta dodaje utworzony zestaw do ogólnej listy zestawów na Stronie Głównej
         public void Stwórz_Zestaw()
         {
+            //W każdym zestawie musi być przynajmniej 10 fiszek
             if(nowy_zestaw.nazwa_zestawu != null && nowy_zestaw.lista_fiszek.Count >= 4)
             {
                 lista_zestawów.Add(nowy_zestaw);
             }
             else
             {
-                //wyjątek musimy dodać
+                // musimy dodać wyjątek
             }
         }
     }

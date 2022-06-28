@@ -11,7 +11,7 @@ namespace Fiszki.Core
      * - będzie można edytować (odpowiedni przycisk)
      * - będzie można się ich uczyć (odpowiedni przycisk)
      */
-    internal class Zestawy_PageViewModel
+    public class Zestawy_PageViewModel
     {
     }
 }

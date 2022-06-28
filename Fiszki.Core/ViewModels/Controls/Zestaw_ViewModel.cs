@@ -11,18 +11,16 @@ namespace Fiszki.Core
         public string nazwa_zestawu { get; set; }
         public List<Fiszka_ViewModel> lista_fiszek;
         public DateTime data_utworzenia;        
-        public Zestaw_ViewModel()
-        {
-            this.nazwa_zestawu = nazwa_zestawu;
-            data_utworzenia = DateTime.Now;
-            lista_fiszek = new List<Fiszka_ViewModel>();
-        }
+            public Zestaw_ViewModel()
+            {                  
+                lista_fiszek = new List<Fiszka_ViewModel>();
+            }
         public int Poziom_Ukończenia()
         {
             int licznik = 0;
             foreach(Fiszka_ViewModel f in lista_fiszek)
             {
-                if(f.nauczone == true) licznik++;
+                if(f.poziom_nauczenia == 3) licznik++;
             }
             double procent = (double)licznik / lista_fiszek.Count;
             return (int)(procent * 100);
@@ -31,7 +29,7 @@ namespace Fiszki.Core
         {
             foreach(Fiszka_ViewModel f in lista_fiszek)
             {
-                f.nauczone = false;
+                f.poziom_nauczenia = 0;
             }
         }        
         public void Dodaj_Fiszkę(Fiszka_ViewModel fiszka) => lista_fiszek.Add(fiszka);
