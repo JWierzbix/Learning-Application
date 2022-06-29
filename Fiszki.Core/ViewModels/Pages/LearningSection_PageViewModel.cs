@@ -52,7 +52,7 @@ namespace Fiszki.Core
                 {
                     //w przypadku, gdy tablica zostanie cała przeszukana, a program nie znajdzie 10 fiszek do rundy
                     if (i == zestaw.lista_fiszek.Count) break;
-                    if (zestaw.lista_fiszek[i].poziom_nauczenia < 3)
+                    if (zestaw.lista_fiszek[i].poziom_nauczenia < 4)
                     {
                         runda.Add(zestaw.lista_fiszek[i]);
                         licznik++;
@@ -67,22 +67,26 @@ namespace Fiszki.Core
                     zaliczona_runda = true;
                     for (int j = 0; j < runda.Count; j++)
                     {
-                        var fiszka = runda[j];
+                        var fiszka = runda[j];                        
                         if (fiszka.poziom_nauczenia == 0)
                         {
-                            Pytanie_0(fiszka, runda);
+                            Pytanie_0(fiszka, zestaw.lista_fiszek);
                             zaliczona_runda = false;
                         }
                         else if (fiszka.poziom_nauczenia == 1)
                         {
-                            Pytanie_1(fiszka);
+                            Pytanie_1(fiszka, zestaw.lista_fiszek);
                             zaliczona_runda = false;
                         }
                         else if (fiszka.poziom_nauczenia == 2)
                         {
                             Pytanie_2(fiszka);
                             zaliczona_runda = false;
-                        }                        
+                        }  
+                        else if (fiszka.poziom_nauczenia == 3)
+                        {
+                            Pytanie_3(fiszka);
+                        }
                     }        
                 }
                 //podsumowanie rundy
@@ -94,7 +98,7 @@ namespace Fiszki.Core
                 wszystkie_nauczone = true;
                 foreach (Fiszka_ViewModel f in zestaw.lista_fiszek)
                 {
-                    if (f.poziom_nauczenia < 3)
+                    if (f.poziom_nauczenia < 4)
                     {
                         wszystkie_nauczone = false;
                         break;
@@ -103,69 +107,82 @@ namespace Fiszki.Core
             }
             Console.WriteLine("Gratuluję, udało Ci się ukończyć naukę całego zestawu!");
         }
-        public static void Pytanie_0(Fiszka_ViewModel fiszka, List<Fiszka_ViewModel> runda)
+        public static void Pytanie_0(Fiszka_ViewModel fiszka, List<Fiszka_ViewModel> lista_fiszek)
         {
-            //mieszamy zestaw do rundy
-            Random random_number = new Random();
-            int l = runda.Count;
-            while (l > 1)
-            {
-                int k = random_number.Next(l--);
-                Fiszka_ViewModel temp = runda[l];
-                runda[l] = runda[k];
-                runda[k] = temp;
-            }            
-            //tworzymy odpowiedzi
-            int i = 1;
+            Random random = new Random();
+            lista_fiszek = lista_fiszek.OrderBy(x => random.Next()).ToList();
             string[] odpowiedzi = new string[4];
             odpowiedzi[0] = fiszka.druga_strona;
-            while (i < runda.Count)
+            int licznik = 1; //indeksator po tablicy odpowiedzi
+            for (int i = 0; i < lista_fiszek.Count; i++)
             {
-                if (i == 4) break;
-                if(runda[i].druga_strona != fiszka.druga_strona)
+                if (licznik == 4) break;
+                if(lista_fiszek[i].druga_strona != fiszka.druga_strona)
                 {
-                    odpowiedzi[i] = runda[i].druga_strona;
-                    i++;
+                    odpowiedzi[licznik] = lista_fiszek[i].druga_strona;
+                    licznik++;
                 }
             }
-            //mieszamy kolejność odpowiedzi
-            l = odpowiedzi.Length;
-            while (l > 1)
-            {
-                int k = random_number.Next(l--);
-                string temp = odpowiedzi[l];
-                odpowiedzi[l] = odpowiedzi[k];
-                odpowiedzi[k] = temp;
-            }
-            //mamy odpowiedzi:
-            int litera = 65;
+            odpowiedzi = odpowiedzi.OrderBy(x => random.Next()).ToArray();
+            int liczba = 65;
             Console.WriteLine($"{fiszka.pierwsza_strona}:");
-            for (int m = 0; m < odpowiedzi.Length; m++)
+            for (int i = 0; i < 4; i++)
             {
-                Console.WriteLine($"{(char)(litera+m)}. {odpowiedzi[m]}");
+                Console.WriteLine($"{(char)(liczba+i)}. {odpowiedzi[i]}");
             }
-            Console.WriteLine("Wpisz poprawną odpowiedź:");
             string odp = Console.ReadLine();
-            //jeżeli dobrze odpowie na pytanie to fiszka wskakuje na poziom wyżej
-            if (odp == fiszka.druga_strona)
+            if(odp == fiszka.druga_strona)
             {
                 fiszka.poziom_nauczenia++;
                 Console.WriteLine("-> Dobrze");
             }
-            //jeżeli źle poziom spada o jeden poziom niżej
-            else if (odp != fiszka.druga_strona && fiszka.poziom_nauczenia > 0)
-            {
-                fiszka.poziom_nauczenia--;
-                Console.WriteLine("-> Źle");
-            }
-            else if (odp != fiszka.druga_strona && fiszka.poziom_nauczenia >= 0)
+            else
             {
                 Console.WriteLine("-> Źle");
             }
             Console.WriteLine("----------------------------------------");
-            return;
         }
-        public static void Pytanie_1(Fiszka_ViewModel fiszka)
+        public static void Pytanie_1(Fiszka_ViewModel fiszka, List<Fiszka_ViewModel> lista_fiszek)
+        {
+            Random random = new Random();
+            lista_fiszek = lista_fiszek.OrderBy(x => random.Next()).ToList();
+            string[] odpowiedzi = new string[4];
+            odpowiedzi[0] = fiszka.pierwsza_strona;
+            int licznik = 1; //indeksator po tablicy odpowiedzi
+            for (int i = 0; i < lista_fiszek.Count; i++)
+            {
+                if (licznik == 4) break;
+                if (lista_fiszek[i].pierwsza_strona != fiszka.pierwsza_strona)
+                {
+                    odpowiedzi[licznik] = lista_fiszek[i].pierwsza_strona;
+                    licznik++;
+                }
+            }
+            odpowiedzi = odpowiedzi.OrderBy(x => random.Next()).ToArray();
+            int liczba = 65;
+            Console.WriteLine($"{fiszka.druga_strona}:");
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine($"{(char)(liczba + i)}. {odpowiedzi[i]}");
+            }
+            string odp = Console.ReadLine();
+            if (odp == fiszka.pierwsza_strona)
+            {
+                fiszka.poziom_nauczenia++;
+                Console.WriteLine("-> Dobrze");
+            }
+            else if (odp != fiszka.pierwsza_strona && fiszka.poziom_nauczenia > 0)
+            {//zmniejszamy poziom bo jesteśmy na 1 poziomie (czyli >0)
+                fiszka.poziom_nauczenia--;
+                Console.WriteLine("-> Źle");
+            }
+            else if (odp != fiszka.pierwsza_strona && fiszka.poziom_nauczenia == 0)
+            {
+                Console.WriteLine("-> Źle");
+            }
+            Console.WriteLine("----------------------------------------");
+        }
+        public static void Pytanie_2(Fiszka_ViewModel fiszka)
         {
             Console.WriteLine($"{fiszka.pierwsza_strona}:");
             string odp = Console.ReadLine();
@@ -181,13 +198,13 @@ namespace Fiszki.Core
                 fiszka.poziom_nauczenia--;
                 Console.WriteLine("-> Źle");                   
             }
-            else if (odp != fiszka.druga_strona && fiszka.poziom_nauczenia >= 0)
+            else if (odp != fiszka.druga_strona && fiszka.poziom_nauczenia == 0)
             {                
                 Console.WriteLine("-> Źle");
             }
             Console.WriteLine("----------------------------------------");                       
         }
-        public static void Pytanie_2(Fiszka_ViewModel fiszka)
+        public static void Pytanie_3(Fiszka_ViewModel fiszka)
         {
             Console.WriteLine($"{fiszka.druga_strona}:");
             string odp = Console.ReadLine();
@@ -203,7 +220,7 @@ namespace Fiszki.Core
                 fiszka.poziom_nauczenia--;
                 Console.WriteLine("-> Źle");
             }
-            else if (odp != fiszka.pierwsza_strona && fiszka.poziom_nauczenia >= 0)
+            else if (odp != fiszka.pierwsza_strona && fiszka.poziom_nauczenia == 0)
             {
                 Console.WriteLine("-> Źle");
             }
