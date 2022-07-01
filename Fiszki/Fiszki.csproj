@@ -143,6 +143,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Fiszki.Core\Fiszki.Core.csproj">
+      <Project>{8f9bef28-fb02-433b-9a76-1c3c2dc50a90}</Project>
+      <Name>Fiszki.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

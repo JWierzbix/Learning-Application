@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Fiszki.Core;
 namespace Fiszki
 {
     /// <summary>
@@ -20,9 +20,10 @@ namespace Fiszki
     /// </summary>
     public partial class StwórzZestaw_Page : Page
     {
-        public StwórzZestaw_Page()
+        public StwórzZestaw_Page(ref List<Zestaw_ViewModel> lista_zestawów)
         {
             InitializeComponent();
+            DataContext = new StwórzZestaw_PageViewModel(ref lista_zestawów);
         }
     }
 }

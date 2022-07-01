@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fiszki"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Fiszki" Height="500" Width="900"
+        MaxHeight="500" MaxWidth="900"
+        MinHeight="500" MinWidth="900"
+        >
+    <local:StronaGłówna_Page />
 </Window>
