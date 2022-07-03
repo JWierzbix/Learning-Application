@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="Fiszki" Height="500" Width="900"
         MaxHeight="500" MaxWidth="900"
-        MinHeight="500" MinWidth="900"
+        MinHeight="500" MinWidth="900"        
         >
-    <local:StronaGłówna_Page />
 </Window>

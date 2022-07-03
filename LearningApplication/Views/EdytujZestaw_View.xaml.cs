@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Fiszki.Core;
-namespace Fiszki
+
+namespace LearningApplication.Views
 {
     /// <summary>
-    /// Logika interakcji dla klasy StronaGłówna_Page.xaml
+    /// Logika interakcji dla klasy EdytujZestaw_View.xaml
     /// </summary>
-    public partial class StronaGłówna_Page : Page
+    public partial class EdytujZestaw_View : UserControl
     {
-        public StronaGłówna_Page()
+        public EdytujZestaw_View()
         {
             InitializeComponent();
-            DataContext = new StronaGłówna_PageViewModel();
         }
-
     }
 }

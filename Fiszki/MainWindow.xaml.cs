@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Fiszki.Core;
 
 namespace Fiszki
 {
@@ -22,7 +23,7 @@ namespace Fiszki
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();                        
         }
     }
 }

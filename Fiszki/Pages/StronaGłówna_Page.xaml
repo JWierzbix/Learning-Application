@@ -5,62 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Fiszki"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="StronaGłówna_Page">    
-    <Grid 
-        Margin="7"
-        >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1.25*"/>
-            <RowDefinition Height="9*"/>            
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
-        <Image
-            Grid.Column="0"
-            Grid.Row="0"
-            Source="C:/Users/Kuba/Desktop/KUBA/Private/Programowanie/PROJEKTY/logo.png"
-            Width="300"
-            Height="280"
-            Grid.RowSpan="2"
-            >            
-        </Image>
-        <Button
-            Name="stwórz_nowy_zestaw"
-            FontSize="18"
-            Grid.Column="0"
-            Grid.Row="2"
-            Margin="5"
-            >Stwórz nowy zestaw</Button>
-        <Button
-            Name="ucz_się_zestawu"
-            FontSize="18"
-            Grid.Column="0"
-            Grid.Row="3"
-            Margin="5"
-            >Ucz się zestawu</Button>
-        <Label
-            Grid.Row="0"
-            Grid.Column="1"
-            Margin="2"
-            FontSize="18"              
-            >
-            Ostatnio używane zestawy:
-        </Label>
-        <ListView 
-            Name="lista_zestawów"
-            Grid.Column="1"
-            Grid.Row="1"
-            Grid.ColumnSpan="1"
-            Grid.RowSpan="3"    
-            Width="550"     
-            DataContext="{Binding lista_zestawów}"
-            >
-        </ListView>        
+      d:DesignHeight="500" d:DesignWidth="900"
+      Title="StronaGłówna_Page">
+    <Grid>
+
     </Grid>
 </Page>

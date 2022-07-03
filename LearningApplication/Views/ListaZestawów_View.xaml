@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="LearningApplication.Views.ListaZestawów_View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearningApplication.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid 
+            Grid.Row="0"
+            Background="#FFC000"
+            >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button 
+                Content="Powrót"
+                FontSize="19"
+                Width="100"
+                Height="50"
+                Grid.Column="0"
+                />
+            <TextBlock 
+                Text="Wybierz Zestaw Do Nauki:"
+                FontSize="19"
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                Margin="200 0 0 0"                
+                />
+        </Grid>
+    </Grid>
+</UserControl>

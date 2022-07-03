@@ -45,6 +45,7 @@
     <Compile Include="ViewModels\Controls\Fiszka_ViewModel.cs" />
     <Compile Include="ViewModels\Controls\Zestaw_ViewModel.cs" />
     <Compile Include="ViewModels\Pages\LearningSection_PageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\Main_ViewModel.cs" />
     <Compile Include="ViewModels\Pages\StronaGłówna_PageViewModel.cs" />
     <Compile Include="ViewModels\Pages\StwórzZestaw_PageViewModel.cs" />
     <Compile Include="ViewModels\Pages\Zestawy_PageViewModel.cs" />
