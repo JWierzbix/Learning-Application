@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="LearningApplication.Views.StrefaNauki_1_View"
+﻿<UserControl x:Class="LearningApplication.Views.ZakończenieZestawu_View"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:LearningApplication.Views"
              mc:Ignorable="d" 
              d:DesignHeight="555" d:DesignWidth="900">
-    <Grid>        
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -46,61 +46,46 @@
         </Grid>
         <Label
             Grid.Row="1"
-            Content="Słowo:"
+            Content="Udało Ci się ukończyć Zestaw!"
             FontSize="19"
-            Margin="0 50 0 10"
-            Padding="40 4 0 4"
-            Width="900"
+            Margin="0 100 0 10"
+            Padding="310 4 0 4"
+            Width="900"            
             Background="gold" Grid.ColumnSpan="2"
             />
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
-            <Button 
-                        Content="A. Odpowiedź" 
-                        FontSize="19"             
-                        Padding="0 3 630 3"
-                        Margin="0 5 50 15"
-                        Width="800"                        
-                        />
-            <Button 
-                        Content="B. Odpowiedź" 
-                        FontSize="19"               
-                        Padding="0 3 630 3"
-                        Margin="0 0 50 15"
-                        Width="800"                        
-                        />
-            <Button 
-                        Content="C. Odpowiedź" 
-                        FontSize="19"               
-                        Padding="0 3 630 3"
-                        Margin="0 0 50 15"   
-                        Width="800"                        
-                        />
-            <Button 
-                        Content="D. Odpowiedź" 
-                        FontSize="19"               
-                        Padding="0 3 630 3"
-                        Margin="0 0 50 15"  
-                        Width="800"                        
-                        />
-        </StackPanel>
-        <Label
-            Content="Poprawnie odpowiedziałeś na pytanie!"
-            Foreground="Green"
-            FontSize="19"
-            Grid.Row="3"
-            Margin="25 20 0 0"
-            />
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button                
+                Grid.Column="0"
+                Content="Powrót do Menu"               
+                FontSize="19"
+                Width="160"
+                Height="35"
+                Margin="260 0 0 0"
+                />
+            <Button                
+                Grid.Column="1"
+                Content="Ucz się od nowa"                
+                FontSize="19"
+                Width="160"
+                Height="35"
+                Margin="10 0 0 0"
+                />
+        </Grid>
         <TextBlock 
-            Grid.Row="4"
+            Grid.Row="5"
             Text="Postęp W Nauce"
             FontSize="19"
-            Margin="17 25 0 0" Grid.ColumnSpan="2"
+            Margin="20 200 0 0" Grid.ColumnSpan="2"
             />
         <ProgressBar             
-            Grid.Row="5"
+            Grid.Row="6"
             Width="800"
             Height="30"
-            Margin="10 15 60 1"
+            Margin="10 240 60 1"
             />
     </Grid>
 </UserControl>

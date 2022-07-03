@@ -58,6 +58,9 @@
     <Compile Include="Views\EdytujZestaw_View.xaml.cs">
       <DependentUpon>EdytujZestaw_View.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\KamieńMilowy_View.xaml.cs">
+      <DependentUpon>KamieńMilowy_View.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ListaZestawów_View.xaml.cs">
       <DependentUpon>ListaZestawów_View.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,9 @@
     <Compile Include="Views\StwórzZestaw_View.xaml.cs">
       <DependentUpon>StwórzZestaw_View.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ZakończenieZestawu_View.xaml.cs">
+      <DependentUpon>ZakończenieZestawu_View.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,6 +92,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\EdytujZestaw_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KamieńMilowy_View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,6 +116,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\StwórzZestaw_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ZakończenieZestawu_View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

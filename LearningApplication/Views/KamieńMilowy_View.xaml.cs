@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LearningApplication
+namespace LearningApplication.Views
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy KamieńMilowy_View.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class KamieńMilowy_View : UserControl
     {
-        public MainWindow()
+        public KamieńMilowy_View()
         {
             InitializeComponent();
         }
-
-        private void StrefaNauki_1_View_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }        
     }
 }

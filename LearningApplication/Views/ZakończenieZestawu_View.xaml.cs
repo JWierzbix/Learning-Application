@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LearningApplication
+namespace LearningApplication.Views
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy ZakończenieZestawu_View.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ZakończenieZestawu_View : UserControl
     {
-        public MainWindow()
+        public ZakończenieZestawu_View()
         {
             InitializeComponent();
         }
-
-        private void StrefaNauki_1_View_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }        
     }
 }

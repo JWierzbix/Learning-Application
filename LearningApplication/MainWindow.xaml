@@ -9,8 +9,9 @@
         Title="LearningApplication" 
         MinWidth="900" MaxWidth="900"
         MinHeight="555" MaxHeight="555"
+        Width="900" Height="555"
         >
     <Grid>
-        <views:ListaZestawów_View />
+        <views:ZakończenieZestawu_View />
     </Grid>
 </Window>
