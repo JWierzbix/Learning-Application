@@ -26,6 +26,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Button
+                Command="{Binding Strefa_Nauki_2_Powrót}"
                 Content="Powrót"
                 FontSize="19"
                 Width="100"
@@ -39,7 +40,7 @@
                 Margin="40 10 0 0"
                 />
             <TextBlock                
-                Text="Nazwa Zestawu"
+                Text="{Binding Strefa_Nauki_2_NazwaZestawu}"
                 FontSize="19"
                 Grid.Column="2"
                 Margin="10 10 0 0"
@@ -47,7 +48,7 @@
         </Grid>
         <Label
             Grid.Row="1"
-            Content="Słowo:"
+            Content="{Binding Strefa_Nauki_2_Słowo}"
             FontSize="19"
             Margin="0 50 0 10"
             Padding="40 4 0 4"
@@ -60,12 +61,14 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBox 
+                Text="{Binding Strefa_Nauki_2_Odpowiedź}"
                 Grid.Column="0"
                 FontSize="19"
                 Width="700"            
                 Margin="20 20 20 20"
             />
             <Button
+                Command="{Binding Strefa_Nauki_2_Zatwierdź}"
                 Content="Zatwierdź"
                 Grid.Column="1"
                 FontSize="19"
@@ -74,7 +77,7 @@
                 />
         </Grid>
         <Label
-            Content="Poprawnie odpowiedziałeś na pytanie!"
+            Content="{Binding Strefa_Nauki_2_PoprawnośćOdpowiedzi}"
             Foreground="Green"
             FontSize="19"
             Grid.Row="4"

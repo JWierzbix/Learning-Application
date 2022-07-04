@@ -25,6 +25,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Button
+                Command="{Binding Strefa_Nauki_1_Powrót}"
                 Content="Powrót"
                 FontSize="19"
                 Width="100"
@@ -38,7 +39,7 @@
                 Margin="40 10 0 0"
                 />
             <TextBlock                
-                Text="Nazwa Zestawu"
+                Text="{Binding Strefa_Nauki_1_NazwaZestawu}"
                 FontSize="19"
                 Grid.Column="2"
                 Margin="10 10 0 0"
@@ -46,7 +47,7 @@
         </Grid>
         <Label
             Grid.Row="1"
-            Content="Słowo:"
+            Content="{Binding Strefa_Nauki_1_Słowo}"
             FontSize="19"
             Margin="0 50 0 10"
             Padding="40 4 0 4"
@@ -55,28 +56,32 @@
             />
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
             <Button 
-                        Content="A. Odpowiedź" 
+                        Command="{Binding Strefa_Nauki_1_Odpowiedź_A_Przycisk}"
+                        Content="{Binding Strefa_Nauki_1_Odpowiedź_A_Text}" 
                         FontSize="19"             
                         Padding="0 3 630 3"
                         Margin="0 5 50 15"
                         Width="800"                        
                         />
             <Button 
-                        Content="B. Odpowiedź" 
+                        Command="{Binding Strefa_Nauki_1_Odpowiedź_B_Przycisk}"
+                        Content="{Binding Strefa_Nauki_1_Odpowiedź_B_Text}" 
                         FontSize="19"               
                         Padding="0 3 630 3"
                         Margin="0 0 50 15"
                         Width="800"                        
                         />
             <Button 
-                        Content="C. Odpowiedź" 
+                        Command="{Binding Strefa_Nauki_1_Odpowiedź_C_Przycisk}"
+                        Content="{Binding Strefa_Nauki_1_Odpowiedź_C_Text}" 
                         FontSize="19"               
                         Padding="0 3 630 3"
                         Margin="0 0 50 15"   
                         Width="800"                        
                         />
             <Button 
-                        Content="D. Odpowiedź" 
+                        Command="{Binding Strefa_Nauki_1_Odpowiedź_D_Przycisk}"
+                        Content="{Binding Strefa_Nauki_1_Odpowiedź_D_Text}" 
                         FontSize="19"               
                         Padding="0 3 630 3"
                         Margin="0 0 50 15"  
@@ -84,7 +89,7 @@
                         />
         </StackPanel>
         <Label
-            Content="Poprawnie odpowiedziałeś na pytanie!"
+            Content="{Binding Strefa_Nauki_1_PoprawnośćOdpowiedzi}"
             Foreground="Green"
             FontSize="19"
             Grid.Row="3"

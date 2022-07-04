@@ -9,49 +9,49 @@ namespace LearningApplication.ViewModels
 {
     class StwórzZestaw_ViewModel: ViewModelBase
     {
-        private string _nazwa_zestawu;
-        public string NazwaZestawu
+        private string _stwórz_zestaw_nazwa_zestawu;
+        public string Stwórz_Zestaw_NazwaZestawu
         {
             get
             {
-                return _nazwa_zestawu;
+                return _stwórz_zestaw_nazwa_zestawu;
             }
             set
             {
-                _nazwa_zestawu = value;
-                OnPropertyChanged(nameof(NazwaZestawu));
+                _stwórz_zestaw_nazwa_zestawu = value;
+                OnPropertyChanged(nameof(Stwórz_Zestaw_NazwaZestawu));
             }
         }
-        private string pierwsza_strona_fiszki;
-        public string PierwszaStronaFiszki
+        private string _stwórz_zestaw_pierwsza_strona_fiszki;
+        public string Stwórz_Zestaw_PierwszaStronaFiszki
         {
             get
             {
-                return pierwsza_strona_fiszki;
+                return _stwórz_zestaw_pierwsza_strona_fiszki;
             }
             set
             {
-                pierwsza_strona_fiszki = value;
-                OnPropertyChanged(nameof(PierwszaStronaFiszki));
+                _stwórz_zestaw_pierwsza_strona_fiszki = value;
+                OnPropertyChanged(nameof(Stwórz_Zestaw_PierwszaStronaFiszki));
             }
         }
         
-        private string druga_strona_fiszki;
-        public string DrugaStronaFiszki
+        private string _stwórz_zestaw_druga_strona_fiszki;
+        public string Stwórz_Zestaw_DrugaStronaFiszki
         {
             get
             {
-                return druga_strona_fiszki;
+                return _stwórz_zestaw_druga_strona_fiszki;
             }
             set
             {
-                druga_strona_fiszki = value;
-                OnPropertyChanged(nameof(DrugaStronaFiszki));
+                _stwórz_zestaw_druga_strona_fiszki = value;
+                OnPropertyChanged(nameof(Stwórz_Zestaw_DrugaStronaFiszki));
             }
         }
-        public ICommand PrzyciskAnuluj { get; }
-        public ICommand PrzyciskStwórz { get; }
-        public ICommand PrzyciskDodajFiszkę { get; }
+        public ICommand Stwórz_Zestaw_PrzyciskAnuluj { get; }
+        public ICommand Stwórz_Zestaw_PrzyciskStwórz { get; }
+        public ICommand Stwórz_Zestaw_PrzyciskDodajFiszkę { get; }
         public StwórzZestaw_ViewModel()
         {
 

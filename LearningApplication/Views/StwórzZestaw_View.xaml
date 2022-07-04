@@ -33,7 +33,7 @@
                 Margin="30,20,10,10"
             />
             <TextBox
-                Text="{Binding NazwaZestawu}"
+                Text="{Binding Stwórz_Zestaw_NazwaZestawu}"
                 FontSize="19"
                 Grid.Row="0"
                 Width="500"
@@ -47,7 +47,7 @@
                 Width="100"
                 Margin="23,20,0,10"
                 Padding="0 0 0 3"
-                Command="{Binding PrzyciskAnuluj}"
+                Command="{Binding Stwórz_Zestaw_PrzyciskAnuluj}"
             />
             <Button
                 Grid.Column="4"
@@ -57,7 +57,7 @@
                 Width="100"
                 Margin="20,20,20,10"
                 Padding="0 0 0 3"
-                Command="{Binding PrzyciskStwórz}"
+                Command="{Binding Stwórz_Zestaw_PrzyciskStwórz}"
             />
         </Grid>
         <TextBlock 
@@ -92,7 +92,7 @@
                 Margin="20 0 0 10" Grid.ColumnSpan="2"
             />
             <TextBox
-                Text="{Binding PierwszaStronaFiszki}"
+                Text="{Binding Stwórz_Zestaw_PierwszaStronaFiszki}"
                 FontSize="19"
                 Grid.Row="1"
                 Grid.Column="0"
@@ -107,7 +107,7 @@
                 Margin="20 5 0 10" Grid.ColumnSpan="2"
             />
             <TextBox
-                Text="{Binding DrugaStronaFiszki}"
+                Text="{Binding Stwórz_Zestaw_DrugaStronaFiszki}"
                 FontSize="19"
                 Grid.Row="3"
                 Grid.Column="0"
@@ -124,7 +124,7 @@
                 HorizontalAlignment="Right"                
                 Margin="30 0 0 40" 
                 Grid.Row="1"
-                Command="{Binding PrzyciskDodajFiszkę}"
+                Command="{Binding Stwórz_Zestaw_PrzyciskDodajFiszkę}"
                 />
         </Grid>
         <TextBlock 
