@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fiszki.Core.ViewModels.Pages
+namespace LearningApplication.ViewModels
 {
-    internal class Main_ViewModel
+    class ZakończenieZestawu_ViewModel
     {
     }
 }

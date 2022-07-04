@@ -12,6 +12,6 @@
         Width="900" Height="555"
         >
     <Grid>
-        <views:ZakończenieZestawu_View />
+        <views:StronaGłówna_View />
     </Grid>
 </Window>

@@ -51,7 +51,7 @@
             Margin="0 100 0 10"
             Padding="310 4 0 4"
             Width="900"            
-            Background="gold" Grid.ColumnSpan="2"
+            Background="#FFC000" Grid.ColumnSpan="2"
             />
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>

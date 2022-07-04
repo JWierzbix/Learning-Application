@@ -51,7 +51,7 @@
             Margin="0 50 0 10"
             Padding="40 4 0 4"
             Width="900"
-            Background="gold" Grid.ColumnSpan="2"
+            Background="#FFC000" Grid.ColumnSpan="2"
             />
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
             <Button 

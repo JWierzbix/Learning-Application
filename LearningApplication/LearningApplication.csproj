@@ -55,6 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\EdytujZestaw_ViewModel.cs" />
+    <Compile Include="ViewModels\KamieńMilowy_ViewModel.cs" />
+    <Compile Include="ViewModels\ListaZestawów_ViewModel.cs" />
+    <Compile Include="ViewModels\StrefaNauki_2_ViewModel.cs" />
+    <Compile Include="ViewModels\StrefaNauki_1_ViewModel.cs" />
+    <Compile Include="ViewModels\StronaGłówna_ViewModel.cs" />
+    <Compile Include="ViewModels\StwórzZestaw_ViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\ZakończenieZestawu_ViewModel.cs" />
     <Compile Include="Views\EdytujZestaw_View.xaml.cs">
       <DependentUpon>EdytujZestaw_View.xaml</DependentUpon>
     </Compile>
@@ -70,8 +79,8 @@
     <Compile Include="Views\StrefaNauki_2_View.xaml.cs">
       <DependentUpon>StrefaNauki_2_View.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\StronaGlówna_View.xaml.cs">
-      <DependentUpon>StronaGlówna_View.xaml</DependentUpon>
+    <Compile Include="Views\StronaGłówna_View.xaml.cs">
+      <DependentUpon>StronaGłówna_View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StwórzZestaw_View.xaml.cs">
       <DependentUpon>StwórzZestaw_View.xaml</DependentUpon>
@@ -111,7 +120,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\StronaGlówna_View.xaml">
+    <Page Include="Views\StronaGłówna_View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

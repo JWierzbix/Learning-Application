@@ -18,9 +18,9 @@ namespace LearningApplication.Views
     /// <summary>
     /// Logika interakcji dla klasy StronaGlówna_View.xaml
     /// </summary>
-    public partial class StronaGlówna_View : UserControl
+    public partial class StronaGłówna_View : UserControl
     {
-        public StronaGlówna_View()
+        public StronaGłówna_View()
         {
             InitializeComponent();
         }
