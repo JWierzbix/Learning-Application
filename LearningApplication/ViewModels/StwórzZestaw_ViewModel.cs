@@ -52,5 +52,9 @@ namespace LearningApplication.ViewModels
         public ICommand PrzyciskAnuluj { get; }
         public ICommand PrzyciskStwórz { get; }
         public ICommand PrzyciskDodajFiszkę { get; }
+        public StwórzZestaw_ViewModel()
+        {
+
+        }
     }
 }
