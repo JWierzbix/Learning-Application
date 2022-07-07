@@ -12,6 +12,6 @@
         Width="900" Height="555"
         >
     <Grid>
-        <views:StronaGłówna_View />
+        <views:StwórzZestaw_View />
     </Grid>
 </Window>

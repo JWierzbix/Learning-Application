@@ -25,6 +25,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Button
+                Command="{Binding Kamień_Milowy_Powrót_Przycisk}"
                 Content="Powrót"
                 FontSize="19"
                 Width="100"
@@ -38,7 +39,7 @@
                 Margin="40 10 0 0"
                 />
             <TextBlock                
-                Text="Nazwa Zestawu"
+                Text="{Binding Kamień_Milowy_Nazwa}"
                 FontSize="19"
                 Grid.Column="2"
                 Margin="10 10 0 0"
@@ -54,6 +55,7 @@
             Background="#FFC000" Grid.ColumnSpan="2"
             />
         <Button
+                Command="{Binding Kamień_Milowy_Kontynuuj}"
                 Grid.Row="2"
                 Content="Kontynuuj"
                 Grid.Column="1"

@@ -20,6 +20,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Button 
+                Command="{Binding Lista_Zestawów_Powrót}"
                 Content="Powrót"
                 FontSize="19"
                 Width="100"
@@ -49,7 +50,10 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Angielski 1" FontSize="18" Margin="10 0 0 0"/>
+                                    <TextBlock                                         
+                                        Text="{Binding Lista_Zestawów_NazwaZestawu}" 
+                                        FontSize="18" 
+                                        Margin="10 0 0 0"/>
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -59,24 +63,28 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Button 
+                                            Command="{Binding Lista_Zestawów_UczSię}"
                                             Background="#FFC000"
                                             Padding="2"
                                             Margin="2 0 2 2"
                                             FontSize="18"
                                             Content="Ucz się" />
                                     <Button 
+                                            Command="{Binding Lista_Zestawów_WyczyśćPostępy}"
                                             Background="#FFC000"
                                             Padding="2"
                                             Margin="2 0 2 2"
                                             FontSize="18"
                                             Content="Wyczyść Postępy" />
                                     <Button 
+                                            Command="{Binding Lista_Zestawów_Edytuj}"
                                             Background="#FFC000"
                                             Padding="2"
                                             Margin="2 0 2 2"
                                             FontSize="18"
                                             Content="Edytuj" />
                                     <Button 
+                                            Command="{Binding Lista_Zestawów_Usuń}"
                                             Background="#FFC000"
                                             Padding="2"
                                             Margin="2 0 2 2"

@@ -25,6 +25,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Button
+                Command="{Binding Zakończenie_Zestawu_PowrótDoListyZestawów}"
                 Content="Powrót"
                 FontSize="19"
                 Width="100"
@@ -58,7 +59,8 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Button                
+            <Button      
+                Command="{Binding Zakończenie_Zestawu_PowrótDoMenu}"
                 Grid.Column="0"
                 Content="Powrót do Menu"               
                 FontSize="19"
@@ -66,7 +68,8 @@
                 Height="35"
                 Margin="260 0 0 0"
                 />
-            <Button                
+            <Button     
+                Command="{Binding Zakończenie_Zestawu_UczSięOdNowa}"
                 Grid.Column="1"
                 Content="Ucz się od nowa"                
                 FontSize="19"
