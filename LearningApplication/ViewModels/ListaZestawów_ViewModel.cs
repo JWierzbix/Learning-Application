@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,22 +11,15 @@ namespace LearningApplication.ViewModels
     class ListaZestawów_ViewModel: ViewModelBase
     {
         public ICommand Lista_Zestawów_Powrót { get; }
-        public ICommand Lista_Zestawów_UczSię { get; }
-        public ICommand Lista_Zestawów_WyczyśćPostępy { get; }
-        public ICommand Lista_Zestawów_Edytuj { get; }
-        public ICommand Lista_Zestawów_Usuń { get; }
-        private string _lista_zestawów_nazwa_zestawu;
-        public string Lista_Zestawów_NazwaZestawu
+        //lista wszystkich zestawów 
+        private ObservableCollection<Zestaw_ViewModel> _lista_zestawów_zestawy;
+        public IEnumerable<Zestaw_ViewModel> ListaZestawów_Zestawy => _lista_zestawów_zestawy;
+        public ListaZestawów_ViewModel()
         {
-            get
-            {
-                return _lista_zestawów_nazwa_zestawu;
-            }
-            set
-            {
-                _lista_zestawów_nazwa_zestawu = value;
-                OnPropertyChanged(nameof(Lista_Zestawów_NazwaZestawu));
-            }
+            _lista_zestawów_zestawy = new ObservableCollection<Zestaw_ViewModel>();
+            _lista_zestawów_zestawy.Add(new Zestaw_ViewModel(new Models.Zestaw("zestaw 1", new List<Models.Fiszka>())));
+            _lista_zestawów_zestawy.Add(new Zestaw_ViewModel(new Models.Zestaw("zestaw 2", new List<Models.Fiszka>())));
+            _lista_zestawów_zestawy.Add(new Zestaw_ViewModel(new Models.Zestaw("zestaw 3", new List<Models.Fiszka>())));
         }
     }
 }

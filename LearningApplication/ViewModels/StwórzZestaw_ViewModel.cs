@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,8 @@ namespace LearningApplication.ViewModels
 {
     class StwórzZestaw_ViewModel: ViewModelBase
     {
+        private ObservableCollection<Fiszka_ViewModel> _stwórz_zestaw_lista_fiszek;
+        public IEnumerable<Fiszka_ViewModel> StwórzZestaw_ListaFiszek => _stwórz_zestaw_lista_fiszek;
         private string _stwórz_zestaw_nazwa_zestawu;
         public string Stwórz_Zestaw_NazwaZestawu
         {
@@ -54,7 +57,10 @@ namespace LearningApplication.ViewModels
         public ICommand Stwórz_Zestaw_PrzyciskDodajFiszkę { get; }
         public StwórzZestaw_ViewModel()
         {
-
+            _stwórz_zestaw_lista_fiszek = new ObservableCollection<Fiszka_ViewModel>();
+            _stwórz_zestaw_lista_fiszek.Add(new Fiszka_ViewModel(new Models.Fiszka("krowa", "cow")));
+            _stwórz_zestaw_lista_fiszek.Add(new Fiszka_ViewModel(new Models.Fiszka("słoń", "elephant")));
+            _stwórz_zestaw_lista_fiszek.Add(new Fiszka_ViewModel(new Models.Fiszka("kurczak", "chicken")));
         }
     }
 }

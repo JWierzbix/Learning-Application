@@ -34,7 +34,7 @@
                 Margin="30,20,10,10"
             />
             <TextBox
-                Text="{Binding Stwórz_Zestaw_NazwaZestawu}"
+                Text="{Binding Stwórz_Zestaw_NazwaZestawu, UpdateSourceTrigger=PropertyChanged}"
                 FontSize="19"
                 Grid.Row="0"
                 Width="500"
@@ -93,7 +93,7 @@
                 Margin="20 0 0 10" Grid.ColumnSpan="2"
             />
             <TextBox
-                Text="{Binding Stwórz_Zestaw_PierwszaStronaFiszki}"
+                Text="{Binding Stwórz_Zestaw_PierwszaStronaFiszki, UpdateSourceTrigger=PropertyChanged}"
                 FontSize="19"
                 Grid.Row="1"
                 Grid.Column="0"
@@ -108,7 +108,7 @@
                 Margin="20 5 0 10" Grid.ColumnSpan="2"
             />
             <TextBox
-                Text="{Binding Stwórz_Zestaw_DrugaStronaFiszki}"
+                Text="{Binding Stwórz_Zestaw_DrugaStronaFiszki, UpdateSourceTrigger=PropertyChanged}"
                 FontSize="19"
                 Grid.Row="3"
                 Grid.Column="0"
@@ -144,13 +144,9 @@
             Width="855"
             Height="200"
             Background="LightYellow"
+            ItemsSource="{Binding StwórzZestaw_ListaFiszek}"
             >
-            <ListViewItem />
-            <ListViewItem />
-            <ListViewItem />
-            <ListViewItem />
-            <ListViewItem />            
-            <ListView.View>                
+            <ListView.View>
                 <GridView>
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
@@ -170,17 +166,18 @@
                                     </StackPanel>
                                     <StackPanel Width="580">
                                         <TextBlock
-                                            Text="dalszy tekst"
+                                            Text="{Binding Fiszka_ViewModel_PierwszaStrona}"
                                             FontSize="15"  
                                             TextWrapping="Wrap"
                                             />
                                         <TextBlock
                                             TextWrapping="Wrap"
-                                            Text="dalszy tekst proszę o wyłączenie komputerów po zakończeniu zajęć laboratoryjnych w sali 3/22"
+                                            Text="{Binding Fiszka_ViewModel_DrugaStrona}"
                                             FontSize="15"                                          
                                             />
                                     </StackPanel>
                                     <Button 
+                                        Command="{Binding Fiszka_ViewModel_Usuń}"
                                         Content="Usuń"
                                         Width="80"
                                         Height="35"

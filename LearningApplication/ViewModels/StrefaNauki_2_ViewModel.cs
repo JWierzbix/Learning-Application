@@ -9,6 +9,11 @@ namespace LearningApplication.ViewModels
 {
     class StrefaNauki_2_ViewModel: ViewModelBase
     {
+        private Models.Fiszka _fiszka;
+        public StrefaNauki_2_ViewModel(ref Models.Fiszka fiszka)
+        {
+            _fiszka = fiszka;
+        }
         private string _strefa_nauki_2_słowo;
         public string Strefa_Nauki_2_Słowo
         {

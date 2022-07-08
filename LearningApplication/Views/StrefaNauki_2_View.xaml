@@ -61,7 +61,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBox 
-                Text="{Binding Strefa_Nauki_2_Odpowiedź}"
+                Text="{Binding Strefa_Nauki_2_Odpowiedź, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="0"
                 FontSize="19"
                 Width="700"            

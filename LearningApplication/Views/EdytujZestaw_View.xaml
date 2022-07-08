@@ -16,6 +16,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid Row="0">
             <Grid.ColumnDefinitions>
@@ -33,7 +34,7 @@
                 Margin="30,20,10,10"
             />
             <TextBox
-                Text="{Binding Edytuj_Zestaw_NazwaZestawu}"
+                Text="{Binding Edytuj_Zestaw_NazwaZestawu, UpdateSourceTrigger=PropertyChanged}"
                 FontSize="19"
                 Grid.Row="0"
                 Width="500"
@@ -92,7 +93,7 @@
                 Margin="20 0 0 10" Grid.ColumnSpan="2"
             />
             <TextBox
-                Text="{Binding Edytuj_Zestaw_PierwszaStronaFiszki}"
+                Text="{Binding Edytuj_Zestaw_PierwszaStronaFiszki, UpdateSourceTrigger=PropertyChanged}"
                 FontSize="19"
                 Grid.Row="1"
                 Grid.Column="0"
@@ -107,7 +108,7 @@
                 Margin="20 5 0 10" Grid.ColumnSpan="2"
             />
             <TextBox
-                Text="{Binding Edytuj_Zestaw_DrugaStronaFiszki}"
+                Text="{Binding Edytuj_Zestaw_DrugaStronaFiszki, UpdateSourceTrigger=PropertyChanged}"
                 FontSize="19"
                 Grid.Row="3"
                 Grid.Column="0"
@@ -136,6 +137,58 @@
             Width="900"
             Padding="400 2 0 2"
             Margin="0 5 0 0"
-            />
+            />        
+        <ListView 
+            ItemsSource="{Binding Edytuj_Zestaw_ListaFiszek}"
+            Grid.Row="5"
+            Margin=" 0 10 18 0"            
+            Width="855"
+            Height="200"
+            Background="LightYellow"
+            >            
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Width="150">
+                                        <TextBlock
+                                            Text="Pierwsza Strona:"
+                                            FontSize="15"
+                                            FontWeight="Bold"                                            
+                                            />
+                                        <TextBlock
+                                            Text="Druga Strona:"
+                                            FontSize="15"
+                                            FontWeight="Bold"                                            
+                                            />
+                                    </StackPanel>
+                                    <StackPanel Width="580">
+                                        <TextBlock
+                                            Text="{Binding Fiszka_ViewModel_PierwszaStrona}"
+                                            FontSize="15"  
+                                            TextWrapping="Wrap"
+                                            />
+                                        <TextBlock
+                                            TextWrapping="Wrap"
+                                            Text="{Binding Fiszka_ViewModel_DrugaStrona}"
+                                            FontSize="15"                                          
+                                            />
+                                    </StackPanel>
+                                    <Button 
+                                        Command="{Binding Fiszka_ViewModel_Usuń}"
+                                        Content="Usuń"
+                                        Width="80"
+                                        Height="35"
+                                        Margin="3"
+                                        />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>

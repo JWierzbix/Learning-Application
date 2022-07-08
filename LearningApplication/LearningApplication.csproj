@@ -56,14 +56,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\EdytujZestaw_ViewModel.cs" />
+    <Compile Include="ViewModels\Fiszka_ViewModel.cs" />
     <Compile Include="ViewModels\KamieńMilowy_ViewModel.cs" />
     <Compile Include="ViewModels\ListaZestawów_ViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\StrefaNauki_2_ViewModel.cs" />
     <Compile Include="ViewModels\StrefaNauki_1_ViewModel.cs" />
     <Compile Include="ViewModels\StronaGłówna_ViewModel.cs" />
     <Compile Include="ViewModels\StwórzZestaw_ViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ZakończenieZestawu_ViewModel.cs" />
+    <Compile Include="ViewModels\Zestaw_ViewModel.cs" />
     <Compile Include="Views\EdytujZestaw_View.xaml.cs">
       <DependentUpon>EdytujZestaw_View.xaml</DependentUpon>
     </Compile>

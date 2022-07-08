@@ -12,6 +12,6 @@
         Width="900" Height="555"
         >
     <Grid>
-        <views:StwórzZestaw_View />
+        <views:ListaZestawów_View DataContext="{Binding CurrentViewModel}" />
     </Grid>
 </Window>

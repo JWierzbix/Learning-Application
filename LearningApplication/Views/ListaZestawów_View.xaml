@@ -36,14 +36,12 @@
                 />
         </Grid>
         <ListView 
+            ItemsSource="{Binding ListaZestawów_Zestawy}"
             Margin="0 30 0 0" 
             Width="850" Height="420" 
             Background="LightYellow"
             Grid.Row="1"
-            >
-            <ListViewItem />
-            <ListViewItem />
-            <ListViewItem />            
+            >                        
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nazwa Zestawu" Width="480">
@@ -51,7 +49,7 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock                                         
-                                        Text="{Binding Lista_Zestawów_NazwaZestawu}" 
+                                        Text="{Binding Zestaw_ViewModel_NazwaZestawu}" 
                                         FontSize="18" 
                                         Margin="10 0 0 0"/>
                                 </StackPanel>
@@ -63,28 +61,28 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Button 
-                                            Command="{Binding Lista_Zestawów_UczSię}"
+                                            Command="{Binding Zestaw_ViewModel_UczSię}"
                                             Background="#FFC000"
                                             Padding="2"
                                             Margin="2 0 2 2"
                                             FontSize="18"
                                             Content="Ucz się" />
                                     <Button 
-                                            Command="{Binding Lista_Zestawów_WyczyśćPostępy}"
+                                            Command="{Binding Zestaw_ViewModel_WyczyśćPostępy}"
                                             Background="#FFC000"
                                             Padding="2"
                                             Margin="2 0 2 2"
                                             FontSize="18"
                                             Content="Wyczyść Postępy" />
                                     <Button 
-                                            Command="{Binding Lista_Zestawów_Edytuj}"
+                                            Command="{Binding Zestaw_ViewModel_Edytuj}"
                                             Background="#FFC000"
                                             Padding="2"
                                             Margin="2 0 2 2"
                                             FontSize="18"
                                             Content="Edytuj" />
                                     <Button 
-                                            Command="{Binding Lista_Zestawów_Usuń}"
+                                            Command="{Binding Zestaw_ViewModel_Usuń}"
                                             Background="#FFC000"
                                             Padding="2"
                                             Margin="2 0 2 2"
