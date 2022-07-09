@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\Lista_Zestawów_PowrótCommand.cs" />
+    <Compile Include="Commands\Strona_Główna_StwórzZestaw_Command.cs" />
+    <Compile Include="Commands\Strona_Główna_WybierzZestaw_Command.cs" />
+    <Compile Include="Commands\StwórzZestaw_ViewModel_AnulujCommand.cs" />
+    <Compile Include="Stores\NavigationStores.cs" />
     <Compile Include="ViewModels\EdytujZestaw_ViewModel.cs" />
     <Compile Include="ViewModels\Fiszka_ViewModel.cs" />
     <Compile Include="ViewModels\KamieńMilowy_ViewModel.cs" />

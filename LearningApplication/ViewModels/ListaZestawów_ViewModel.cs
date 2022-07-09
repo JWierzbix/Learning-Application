@@ -13,13 +13,12 @@ namespace LearningApplication.ViewModels
         public ICommand Lista_Zestawów_Powrót { get; }
         //lista wszystkich zestawów 
         private ObservableCollection<Zestaw_ViewModel> _lista_zestawów_zestawy;
+        private Dictionary<string, Models.Zestaw> lista_zestawów;
         public IEnumerable<Zestaw_ViewModel> ListaZestawów_Zestawy => _lista_zestawów_zestawy;
-        public ListaZestawów_ViewModel()
+        public ListaZestawów_ViewModel(Stores.NavigationStore navigationStore, Dictionary<string,Models.Zestaw> lista_zestawów)
         {
-            _lista_zestawów_zestawy = new ObservableCollection<Zestaw_ViewModel>();
-            _lista_zestawów_zestawy.Add(new Zestaw_ViewModel(new Models.Zestaw("zestaw 1", new List<Models.Fiszka>())));
-            _lista_zestawów_zestawy.Add(new Zestaw_ViewModel(new Models.Zestaw("zestaw 2", new List<Models.Fiszka>())));
-            _lista_zestawów_zestawy.Add(new Zestaw_ViewModel(new Models.Zestaw("zestaw 3", new List<Models.Fiszka>())));
+            _lista_zestawów_zestawy = new ObservableCollection<Zestaw_ViewModel>();            
+            Lista_Zestawów_Powrót = new Commands.Lista_Zestawów_PowrótCommand(navigationStore,lista_zestawów);
         }
     }
 }
