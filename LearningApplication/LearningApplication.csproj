@@ -60,6 +60,8 @@
     <Compile Include="Commands\Strona_Główna_StwórzZestaw_Command.cs" />
     <Compile Include="Commands\Strona_Główna_WybierzZestaw_Command.cs" />
     <Compile Include="Commands\StwórzZestaw_ViewModel_AnulujCommand.cs" />
+    <Compile Include="Commands\Stwórz_Zestaw_PrzyciskDodajFiszkęCommand.cs" />
+    <Compile Include="Commands\Stwórz_Zestaw_PrzyciskStwórzCommand.cs" />
     <Compile Include="Stores\NavigationStores.cs" />
     <Compile Include="ViewModels\EdytujZestaw_ViewModel.cs" />
     <Compile Include="ViewModels\Fiszka_ViewModel.cs" />

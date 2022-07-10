@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LearningApplication.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -263,6 +264,18 @@ namespace LearningApplication.Models
                 Console.WriteLine("-> Źle");
             }
             Console.WriteLine("----------------------------------------");
+        }
+        public static List<Fiszka> Zamień_Na_Listę_Fiszek(IEnumerable<Fiszka_ViewModel> collection)
+        {
+            List<Fiszka> lista = new List<Fiszka>();
+            foreach(var item in collection)
+            {
+                string pierwsza_strona_fiszki = item.Fiszka_ViewModel_PierwszaStrona;
+                string druga_strona_fiszki = item.Fiszka_ViewModel_DrugaStrona;
+                Fiszka nowa_fiszka = new Fiszka(pierwsza_strona_fiszki, druga_strona_fiszki);
+                lista.Add(nowa_fiszka);
+            }
+            return lista;
         }
     }
 }

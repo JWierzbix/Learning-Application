@@ -1,4 +1,5 @@
-﻿using LearningApplication.Stores;
+﻿using LearningApplication.Models;
+using LearningApplication.Stores;
 using LearningApplication.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,8 @@ namespace LearningApplication.Commands
     class StwórzZestaw_ViewModel_AnulujCommand : CommandBase
     {
         private readonly NavigationStore _navigationStore;
-        private readonly Dictionary<string, Models.Zestaw> _lista_zestawów;
-        public StwórzZestaw_ViewModel_AnulujCommand(NavigationStore navigationStore, Dictionary<string, Models.Zestaw> lista_zestawów)
+        private readonly Lista_Zestawów _lista_zestawów;
+        public StwórzZestaw_ViewModel_AnulujCommand(NavigationStore navigationStore, Lista_Zestawów lista_zestawów)
         {
             _navigationStore = navigationStore;
             _lista_zestawów = lista_zestawów;

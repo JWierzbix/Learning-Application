@@ -16,11 +16,11 @@ namespace LearningApplication
     /// </summary>
     public partial class App : Application
     {
-        private Dictionary<string, Zestaw> lista_zestawów;
+        private Lista_Zestawów lista_zestawów;
         private NavigationStore _navigationStore;
         public App()
         {
-            lista_zestawów = new Dictionary<string, Zestaw>();
+            lista_zestawów = new Lista_Zestawów();
             _navigationStore = new NavigationStore();
         }
         protected override void OnStartup(StartupEventArgs e)

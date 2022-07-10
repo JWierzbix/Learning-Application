@@ -1,4 +1,5 @@
-﻿using LearningApplication.Stores;
+﻿using LearningApplication.Models;
+using LearningApplication.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace LearningApplication.Commands
     class Lista_Zestawów_PowrótCommand: CommandBase
     {
         private readonly NavigationStore navigationStore;
-        private readonly Dictionary<string, Models.Zestaw> _lista_zestawów;
-        public Lista_Zestawów_PowrótCommand(NavigationStore navigationStore, Dictionary<string, Models.Zestaw> lista_zestawów)
+        private readonly Lista_Zestawów _lista_zestawów;
+        public Lista_Zestawów_PowrótCommand(NavigationStore navigationStore, Lista_Zestawów lista_zestawów)
         {
             this.navigationStore = navigationStore;
             _lista_zestawów = lista_zestawów;

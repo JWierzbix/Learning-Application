@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LearningApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace LearningApplication.ViewModels
 {
     class StwórzZestaw_ViewModel: ViewModelBase
     {
-        private Dictionary<string, Models.Zestaw> _lista_zestawów;
+        private Lista_Zestawów _lista_zestawów;
         private ObservableCollection<Fiszka_ViewModel> _stwórz_zestaw_lista_fiszek;
         public IEnumerable<Fiszka_ViewModel> StwórzZestaw_ListaFiszek => _stwórz_zestaw_lista_fiszek;
         private string _stwórz_zestaw_nazwa_zestawu;
@@ -56,14 +57,13 @@ namespace LearningApplication.ViewModels
         public ICommand Stwórz_Zestaw_PrzyciskAnuluj { get; }
         public ICommand Stwórz_Zestaw_PrzyciskStwórz { get; }
         public ICommand Stwórz_Zestaw_PrzyciskDodajFiszkę { get; }
-        public StwórzZestaw_ViewModel(Stores.NavigationStore navigationStore, Dictionary<string, Models.Zestaw> lista_zestawów)
+        public StwórzZestaw_ViewModel(Stores.NavigationStore navigationStore, Lista_Zestawów lista_zestawów)
         {
             _lista_zestawów = lista_zestawów;
-            _stwórz_zestaw_lista_fiszek = new ObservableCollection<Fiszka_ViewModel>();
-            _stwórz_zestaw_lista_fiszek.Add(new Fiszka_ViewModel(new Models.Fiszka("krowa", "cow")));
-            _stwórz_zestaw_lista_fiszek.Add(new Fiszka_ViewModel(new Models.Fiszka("słoń", "elephant")));
-            _stwórz_zestaw_lista_fiszek.Add(new Fiszka_ViewModel(new Models.Fiszka("kurczak", "chicken")));
+            _stwórz_zestaw_lista_fiszek = new ObservableCollection<Fiszka_ViewModel>();            
             Stwórz_Zestaw_PrzyciskAnuluj = new Commands.StwórzZestaw_ViewModel_AnulujCommand(navigationStore,_lista_zestawów);
+            Stwórz_Zestaw_PrzyciskStwórz = new Commands.Stwórz_Zestaw_PrzyciskStwórzCommand(this, navigationStore, _lista_zestawów);
+            Stwórz_Zestaw_PrzyciskDodajFiszkę = new Commands.Stwórz_Zestaw_PrzyciskDodajFiszkęCommand();
         }
     }
 }
