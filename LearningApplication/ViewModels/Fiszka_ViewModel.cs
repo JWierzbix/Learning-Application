@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace LearningApplication.ViewModels
 {
-    class Fiszka_ViewModel:ViewModelBase
+    internal class Fiszka_ViewModel:ViewModelBase
     {
         private Models.Fiszka _fiszka;
         public ICommand Fiszka_ViewModel_Usuń { get; }

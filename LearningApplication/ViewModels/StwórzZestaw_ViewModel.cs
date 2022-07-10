@@ -9,11 +9,14 @@ using System.Windows.Input;
 
 namespace LearningApplication.ViewModels
 {
-    class StwórzZestaw_ViewModel: ViewModelBase
+    internal class StwórzZestaw_ViewModel: ViewModelBase
     {
-        private Lista_Zestawów _lista_zestawów;
-        private ObservableCollection<Fiszka_ViewModel> _stwórz_zestaw_lista_fiszek;
-        public IEnumerable<Fiszka_ViewModel> StwórzZestaw_ListaFiszek => _stwórz_zestaw_lista_fiszek;
+        private readonly Lista_Zestawów _lista_zestawów;
+        private readonly ObservableCollection<Fiszka_ViewModel> _stwórz_zestaw_lista_fiszek;
+        public IEnumerable<Fiszka_ViewModel> StwórzZestaw_ListaFiszek
+        {
+            get => _stwórz_zestaw_lista_fiszek;               
+        }
         private string _stwórz_zestaw_nazwa_zestawu;
         public string Stwórz_Zestaw_NazwaZestawu
         {
@@ -62,8 +65,21 @@ namespace LearningApplication.ViewModels
             _lista_zestawów = lista_zestawów;
             _stwórz_zestaw_lista_fiszek = new ObservableCollection<Fiszka_ViewModel>();            
             Stwórz_Zestaw_PrzyciskAnuluj = new Commands.StwórzZestaw_ViewModel_AnulujCommand(navigationStore,_lista_zestawów);
+            Stwórz_Zestaw_PrzyciskStwórz = new Commands.Stwórz_Zestaw_PrzyciskStwórzCommand(this, navigationStore,_lista_zestawów);
+            Stwórz_Zestaw_PrzyciskDodajFiszkę = new Commands.Stwórz_Zestaw_PrzyciskDodajFiszkęCommand(this, navigationStore, _lista_zestawów);
+        }
+        public StwórzZestaw_ViewModel(Stores.NavigationStore navigationStore, Lista_Zestawów lista_zestawów, IEnumerable<Fiszka_ViewModel> lista_fiszek, string nazwa_zestawu)
+        {
+            _lista_zestawów = lista_zestawów;
+            _stwórz_zestaw_lista_fiszek = new ObservableCollection<Fiszka_ViewModel>();
+            foreach(var item in lista_fiszek)
+            {
+                _stwórz_zestaw_lista_fiszek.Add(item);
+            }
+            Stwórz_Zestaw_NazwaZestawu = nazwa_zestawu;
+            Stwórz_Zestaw_PrzyciskAnuluj = new Commands.StwórzZestaw_ViewModel_AnulujCommand(navigationStore, _lista_zestawów);
             Stwórz_Zestaw_PrzyciskStwórz = new Commands.Stwórz_Zestaw_PrzyciskStwórzCommand(this, navigationStore, _lista_zestawów);
-            Stwórz_Zestaw_PrzyciskDodajFiszkę = new Commands.Stwórz_Zestaw_PrzyciskDodajFiszkęCommand();
+            Stwórz_Zestaw_PrzyciskDodajFiszkę = new Commands.Stwórz_Zestaw_PrzyciskDodajFiszkęCommand(this, navigationStore, _lista_zestawów);
         }
     }
 }
