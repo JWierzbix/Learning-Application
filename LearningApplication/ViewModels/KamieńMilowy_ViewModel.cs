@@ -8,20 +8,8 @@ using System.Windows.Input;
 namespace LearningApplication.ViewModels
 {
     class KamieńMilowy_ViewModel: ViewModelBase
-    {
-        private string _kamień_milowy_nazwa;
-        public string Kamień_Milowy_Nazwa
-        {
-            get
-            {
-                return _kamień_milowy_nazwa;
-            }
-            set
-            {
-                _kamień_milowy_nazwa = value;
-                OnPropertyChanged(nameof(Kamień_Milowy_Nazwa));
-            }
-        }
+    {        
+        public string Kamień_Milowy_Nazwa { get; }
         public ICommand Kamień_Milowy_Powrót_Przycisk { get; }
         public ICommand Kamień_Milowy_Kontynuuj { get; }
 

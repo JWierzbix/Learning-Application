@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LearningApplication.Views"
+             xmlns:components="clr-namespace:LearningApplication.Components"
+             xmlns:vms="clr-namespace:LearningApplication.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="555" d:DesignWidth="900">
     <Grid
@@ -138,57 +140,10 @@
             Padding="400 2 0 2"
             Margin="0 5 0 0"
             />
-        <ListView 
+        <components:StwórzZestaw_ListaFiszek_Component 
             Grid.Row="5"
-            Margin=" 0 10 18 0"            
-            Width="855"
-            Height="200"
-            Background="LightYellow"
-            ItemsSource="{Binding StwórzZestaw_ListaFiszek}"
-            >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn>
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <StackPanel Width="150">
-                                        <TextBlock
-                                            Text="Pierwsza Strona:"
-                                            FontSize="15"
-                                            FontWeight="Bold"                                            
-                                            />
-                                        <TextBlock
-                                            Text="Druga Strona:"
-                                            FontSize="15"
-                                            FontWeight="Bold"                                            
-                                            />
-                                    </StackPanel>
-                                    <StackPanel Width="580">
-                                        <TextBlock
-                                            Text="{Binding Fiszka_ViewModel_PierwszaStrona}"
-                                            FontSize="15"  
-                                            TextWrapping="Wrap"
-                                            />
-                                        <TextBlock
-                                            TextWrapping="Wrap"
-                                            Text="{Binding Fiszka_ViewModel_DrugaStrona}"
-                                            FontSize="15"                                          
-                                            />
-                                    </StackPanel>
-                                    <Button 
-                                        Command="{Binding Fiszka_ViewModel_Usuń}"
-                                        Content="Usuń"
-                                        Width="80"
-                                        Height="35"
-                                        Margin="3"
-                                        />
-                                </StackPanel>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+            Margin=" 0 10 18 0"
+            DataContext="{Binding StwórzZestaw_ListaFiszek}"
+            />        
     </Grid>
 </UserControl>

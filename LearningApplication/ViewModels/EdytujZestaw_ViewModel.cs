@@ -9,9 +9,8 @@ using System.Windows.Input;
 namespace LearningApplication.ViewModels
 {
     class EdytujZestaw_ViewModel : ViewModelBase
-    {        
-        private ObservableCollection<Fiszka_ViewModel> _edytuj_zestaw_lista_fiszek;
-        public IEnumerable<Fiszka_ViewModel> Edytuj_Zestaw_ListaFiszek => _edytuj_zestaw_lista_fiszek;
+    {
+        public EdytujZestaw_ListaFiszek_ViewModel EdytujZestaw_ListaFiszek_ViewModel { get; } //jest napisane dobrze - to ta sama klasa       
         private string _edytuj_zestaw_nazwa_zestawu;
         public string Edytuj_Zestaw_NazwaZestawu
         {
@@ -56,7 +55,7 @@ namespace LearningApplication.ViewModels
         public ICommand Edytuj_Zestaw_PrzyciskDodajFiszkę { get; }
         public EdytujZestaw_ViewModel()
         {
-            _edytuj_zestaw_lista_fiszek = new ObservableCollection<Fiszka_ViewModel>();
+            EdytujZestaw_ListaFiszek_ViewModel = new EdytujZestaw_ListaFiszek_ViewModel();
         }
     }
 }

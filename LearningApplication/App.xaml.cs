@@ -15,17 +15,15 @@ namespace LearningApplication
     /// Logika interakcji dla klasy App.xaml
     /// </summary>
     public partial class App : Application
-    {
-        private Lista_Zestawów lista_zestawów;
+    {        
         private NavigationStore _navigationStore;
-        public App()
-        {
-            lista_zestawów = new Lista_Zestawów();
+        public App()        
+        {            
             _navigationStore = new NavigationStore();
         }
         protected override void OnStartup(StartupEventArgs e)
         {
-            _navigationStore.CurrentViewModel = new StronaGłówna_ViewModel(_navigationStore, lista_zestawów);
+            _navigationStore.CurrentViewModel = new StronaGłówna_ViewModel(_navigationStore);
 
             MainWindow = new MainWindow()
             {

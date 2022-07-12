@@ -46,9 +46,17 @@ namespace LearningApplication.Models
             lista_fiszek.Add(fiszka);
             data_edytowania = DateTime.Now;
         }
-        public void Usuń_Fiszkę(int indeks)
+        public void Usuń_Fiszkę(string pierwsza_strona, string druga_strona)
         {
-            lista_fiszek.RemoveAt(indeks);
+            int i = 0;
+            for (i = 0; i < lista_fiszek.Count; i++)
+            {
+                if(lista_fiszek[i].pierwsza_strona==pierwsza_strona && lista_fiszek[i].druga_strona == druga_strona)
+                {
+                    lista_fiszek.RemoveAt(i);
+                    break;
+                }
+            }            
             data_edytowania = DateTime.Now;
         }
         public void Edytuj_Fiszkę(int indeks, string pierwsza_strona, string druga_strona)

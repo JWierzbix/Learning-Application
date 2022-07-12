@@ -10,17 +10,15 @@ namespace LearningApplication.Commands
 {
     class Lista_Zestawów_PowrótCommand: CommandBase
     {
-        private readonly NavigationStore navigationStore;
-        private readonly Lista_Zestawów _lista_zestawów;
-        public Lista_Zestawów_PowrótCommand(NavigationStore navigationStore, Lista_Zestawów lista_zestawów)
+        private readonly NavigationStore navigationStore;        
+        public Lista_Zestawów_PowrótCommand(NavigationStore navigationStore)
         {
-            this.navigationStore = navigationStore;
-            _lista_zestawów = lista_zestawów;
+            this.navigationStore = navigationStore;            
         }
 
         public override void Execute(object parameter)
         {
-            navigationStore.CurrentViewModel = new ViewModels.StronaGłówna_ViewModel(navigationStore,_lista_zestawów);
+            navigationStore.CurrentViewModel = new ViewModels.StronaGłówna_ViewModel(navigationStore);
         }
     }
 }

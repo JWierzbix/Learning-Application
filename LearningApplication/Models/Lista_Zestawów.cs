@@ -21,7 +21,18 @@ namespace LearningApplication.Models
                 return true;
             else return false;
         }
-
+        public void UsuńFiszkę(string nazwa_zestawu, string pierwsza_strona, string druga_strona)
+        {
+            int i = 0;
+            for (i = 0; i < lista_zestawów[nazwa_zestawu].lista_fiszek.Count; i++)
+            {
+                if (lista_zestawów[nazwa_zestawu].lista_fiszek[i].pierwsza_strona == pierwsza_strona
+                    && lista_zestawów[nazwa_zestawu].lista_fiszek[i].druga_strona == druga_strona)
+                {
+                    lista_zestawów[nazwa_zestawu].lista_fiszek.RemoveAt(i);
+                }
+            }
+        }
         public IEnumerator<KeyValuePair<string, Zestaw>> GetEnumerator()
         {
             return lista_zestawów.GetEnumerator();

@@ -56,21 +56,42 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\Fiszka_ViewModel_UsuńCommand.cs" />
     <Compile Include="Commands\Lista_Zestawów_PowrótCommand.cs" />
     <Compile Include="Commands\Strona_Główna_StwórzZestaw_Command.cs" />
     <Compile Include="Commands\Strona_Główna_WybierzZestaw_Command.cs" />
     <Compile Include="Commands\StwórzZestaw_ViewModel_AnulujCommand.cs" />
     <Compile Include="Commands\Stwórz_Zestaw_PrzyciskDodajFiszkęCommand.cs" />
     <Compile Include="Commands\Stwórz_Zestaw_PrzyciskStwórzCommand.cs" />
-    <Compile Include="Stores\NavigationStores.cs" />
+    <Compile Include="Commands\Zestaw_ViewModel_Edytuj_Command.cs" />
+    <Compile Include="Commands\Zestaw_ViewModel_UczSię_Command.cs" />
+    <Compile Include="Commands\Zestaw_ViewModel_Usuń_Command.cs" />
+    <Compile Include="Commands\Zestaw_ViewModel_WyczyśćPostępy_Command.cs" />
+    <Compile Include="Components\EdytujZestaw_ListaFiszek_Component.xaml.cs">
+      <DependentUpon>EdytujZestaw_ListaFiszek_Component.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ListaZestawów_ListaZestawów_Component.xaml.cs">
+      <DependentUpon>ListaZestawów_ListaZestawów_Component.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\StronaGłówna_OstatnioUżywaneZestawy_Component.xaml.cs">
+      <DependentUpon>StronaGłówna_OstatnioUżywaneZestawy_Component.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\StwórzZestaw_ListaFiszek_Component.xaml.cs">
+      <DependentUpon>StwórzZestaw_ListaFiszek_Component.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stores\NavigationStore.cs" />
+    <Compile Include="ViewModels\EdytujZestaw_ListaFiszek_ViewModel.cs" />
     <Compile Include="ViewModels\EdytujZestaw_ViewModel.cs" />
     <Compile Include="ViewModels\Fiszka_ViewModel.cs" />
     <Compile Include="ViewModels\KamieńMilowy_ViewModel.cs" />
+    <Compile Include="ViewModels\ListaZestawów_ListaZestawów_ViewModel.cs" />
     <Compile Include="ViewModels\ListaZestawów_ViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\StrefaNauki_2_ViewModel.cs" />
     <Compile Include="ViewModels\StrefaNauki_1_ViewModel.cs" />
+    <Compile Include="ViewModels\StronaGłówna_OstatnioUżywaneZestawy_ViewModel.cs" />
     <Compile Include="ViewModels\StronaGłówna_ViewModel.cs" />
+    <Compile Include="ViewModels\StwórzZestaw_ListaFiszek_ViewModel.cs" />
     <Compile Include="ViewModels\StwórzZestaw_ViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ZakończenieZestawu_ViewModel.cs" />
@@ -99,6 +120,22 @@
     <Compile Include="Views\ZakończenieZestawu_View.xaml.cs">
       <DependentUpon>ZakończenieZestawu_View.xaml</DependentUpon>
     </Compile>
+    <Page Include="Components\EdytujZestaw_ListaFiszek_Component.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\ListaZestawów_ListaZestawów_Component.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\StronaGłówna_OstatnioUżywaneZestawy_Component.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\StwórzZestaw_ListaFiszek_Component.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

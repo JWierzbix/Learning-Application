@@ -11,12 +11,7 @@ namespace LearningApplication.ViewModels
 {
     internal class StwórzZestaw_ViewModel: ViewModelBase
     {
-        private readonly Lista_Zestawów _lista_zestawów;
-        private readonly ObservableCollection<Fiszka_ViewModel> _stwórz_zestaw_lista_fiszek;
-        public IEnumerable<Fiszka_ViewModel> StwórzZestaw_ListaFiszek
-        {
-            get => _stwórz_zestaw_lista_fiszek;               
-        }
+        public StwórzZestaw_ListaFiszek_ViewModel StwórzZestaw_ListaFiszek { get; }                
         private string _stwórz_zestaw_nazwa_zestawu;
         public string Stwórz_Zestaw_NazwaZestawu
         {
@@ -59,27 +54,13 @@ namespace LearningApplication.ViewModels
         }
         public ICommand Stwórz_Zestaw_PrzyciskAnuluj { get; }
         public ICommand Stwórz_Zestaw_PrzyciskStwórz { get; }
-        public ICommand Stwórz_Zestaw_PrzyciskDodajFiszkę { get; }
-        public StwórzZestaw_ViewModel(Stores.NavigationStore navigationStore, Lista_Zestawów lista_zestawów)
+        public ICommand Stwórz_Zestaw_PrzyciskDodajFiszkę { get; }        
+        public StwórzZestaw_ViewModel(Stores.NavigationStore navigationStore)
         {
-            _lista_zestawów = lista_zestawów;
-            _stwórz_zestaw_lista_fiszek = new ObservableCollection<Fiszka_ViewModel>();            
-            Stwórz_Zestaw_PrzyciskAnuluj = new Commands.StwórzZestaw_ViewModel_AnulujCommand(navigationStore,_lista_zestawów);
-            Stwórz_Zestaw_PrzyciskStwórz = new Commands.Stwórz_Zestaw_PrzyciskStwórzCommand(this, navigationStore,_lista_zestawów);
-            Stwórz_Zestaw_PrzyciskDodajFiszkę = new Commands.Stwórz_Zestaw_PrzyciskDodajFiszkęCommand(this, navigationStore, _lista_zestawów);
-        }
-        public StwórzZestaw_ViewModel(Stores.NavigationStore navigationStore, Lista_Zestawów lista_zestawów, IEnumerable<Fiszka_ViewModel> lista_fiszek, string nazwa_zestawu)
-        {
-            _lista_zestawów = lista_zestawów;
-            _stwórz_zestaw_lista_fiszek = new ObservableCollection<Fiszka_ViewModel>();
-            foreach(var item in lista_fiszek)
-            {
-                _stwórz_zestaw_lista_fiszek.Add(item);
-            }
-            Stwórz_Zestaw_NazwaZestawu = nazwa_zestawu;
-            Stwórz_Zestaw_PrzyciskAnuluj = new Commands.StwórzZestaw_ViewModel_AnulujCommand(navigationStore, _lista_zestawów);
-            Stwórz_Zestaw_PrzyciskStwórz = new Commands.Stwórz_Zestaw_PrzyciskStwórzCommand(this, navigationStore, _lista_zestawów);
-            Stwórz_Zestaw_PrzyciskDodajFiszkę = new Commands.Stwórz_Zestaw_PrzyciskDodajFiszkęCommand(this, navigationStore, _lista_zestawów);
+            StwórzZestaw_ListaFiszek = new StwórzZestaw_ListaFiszek_ViewModel();
+            Stwórz_Zestaw_PrzyciskAnuluj = new Commands.StwórzZestaw_ViewModel_AnulujCommand(navigationStore);
+            Stwórz_Zestaw_PrzyciskStwórz = new Commands.Stwórz_Zestaw_PrzyciskStwórzCommand(this,navigationStore);
+            Stwórz_Zestaw_PrzyciskDodajFiszkę = new Commands.Stwórz_Zestaw_PrzyciskDodajFiszkęCommand(this,navigationStore);
         }
     }
 }

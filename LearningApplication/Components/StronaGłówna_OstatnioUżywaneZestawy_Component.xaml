@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="LearningApplication.Components.StronaGłówna_OstatnioUżywaneZestawy_Component"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LearningApplication.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="550">
+    <ListView                  
+                Width="550" Height="450" 
+                Background="LightYellow"
+                ItemsSource="{Binding StronaGłówna_OstatnioUżywaneZestawy}"
+                >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock 
+                                            Text="{Binding Zestaw_ViewModel_NazwaZestawu}" 
+                                            FontSize="18"
+                                            Width="200"
+                                            />
+                    <Button 
+                                            Command="{Binding Zestaw_ViewModel_UczSię}"
+                                            Background="#FFC000"
+                                            Padding="2"
+                                            Margin="2 0 2 2"
+                                            FontSize="18"
+                                            Content="Ucz się" />
+                    <Button 
+                                            Command="{Binding Zestaw_ViewModel_WyczyśćPostępy}"
+                                            Background="#FFC000"
+                                            Padding="2"
+                                            Margin="2 0 2 2"
+                                            FontSize="18"
+                                            Content="Wyczyść Postępy" />
+                    <Button 
+                                            Command="{Binding Zestaw_ViewModel_Edytuj}"
+                                            Background="#FFC000"
+                                            Padding="2"
+                                            Margin="2 0 2 2"
+                                            FontSize="18"
+                                            Content="Edytuj" />
+                    <Button 
+                                            Command="{Binding Zestaw_ViewModel_Usuń}"
+                                            Background="#FFC000"
+                                            Padding="2"
+                                            Margin="2 0 2 2"
+                                            FontSize="18"
+                                            Content="Usuń" />
+                </StackPanel>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</UserControl>
