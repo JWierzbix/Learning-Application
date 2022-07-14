@@ -1,4 +1,6 @@
-﻿using LearningApplication.Models;
+﻿using LearningApplication.Commands;
+using LearningApplication.Models;
+using LearningApplication.Stores;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,7 +13,8 @@ namespace LearningApplication.ViewModels
 {
     internal class StwórzZestaw_ViewModel: ViewModelBase
     {
-        public StwórzZestaw_ListaFiszek_ViewModel StwórzZestaw_ListaFiszek { get; }                
+        private readonly Lista_Zestawów _lista_zestawów;
+        public StwórzZestaw_ListaFiszek_ViewModel StwórzZestaw_ListaFiszek { get; set; }                
         private string _stwórz_zestaw_nazwa_zestawu;
         public string Stwórz_Zestaw_NazwaZestawu
         {
@@ -55,12 +58,13 @@ namespace LearningApplication.ViewModels
         public ICommand Stwórz_Zestaw_PrzyciskAnuluj { get; }
         public ICommand Stwórz_Zestaw_PrzyciskStwórz { get; }
         public ICommand Stwórz_Zestaw_PrzyciskDodajFiszkę { get; }        
-        public StwórzZestaw_ViewModel(Stores.NavigationStore navigationStore)
+        public StwórzZestaw_ViewModel(NavigationStore navigationStore,Lista_Zestawów lista_zestawów )
         {
-            StwórzZestaw_ListaFiszek = new StwórzZestaw_ListaFiszek_ViewModel();
-            Stwórz_Zestaw_PrzyciskAnuluj = new Commands.StwórzZestaw_ViewModel_AnulujCommand(navigationStore);
-            Stwórz_Zestaw_PrzyciskStwórz = new Commands.Stwórz_Zestaw_PrzyciskStwórzCommand(this,navigationStore);
-            Stwórz_Zestaw_PrzyciskDodajFiszkę = new Commands.Stwórz_Zestaw_PrzyciskDodajFiszkęCommand(this,navigationStore);
+            _lista_zestawów = lista_zestawów;
+            StwórzZestaw_ListaFiszek = new StwórzZestaw_ListaFiszek_ViewModel(lista_zestawów);
+            Stwórz_Zestaw_PrzyciskAnuluj = new StwórzZestaw_ViewModel_AnulujCommand(navigationStore, lista_zestawów);
+            Stwórz_Zestaw_PrzyciskStwórz = new Stwórz_Zestaw_PrzyciskStwórzCommand(navigationStore, lista_zestawów, this);
+            Stwórz_Zestaw_PrzyciskDodajFiszkę = new Stwórz_Zestaw_PrzyciskDodajFiszkęCommand(navigationStore,lista_zestawów );
         }
     }
 }

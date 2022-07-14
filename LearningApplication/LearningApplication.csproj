@@ -80,7 +80,6 @@
       <DependentUpon>StwórzZestaw_ListaFiszek_Component.xaml</DependentUpon>
     </Compile>
     <Compile Include="Stores\NavigationStore.cs" />
-    <Compile Include="ViewModels\EdytujZestaw_ListaFiszek_ViewModel.cs" />
     <Compile Include="ViewModels\EdytujZestaw_ViewModel.cs" />
     <Compile Include="ViewModels\Fiszka_ViewModel.cs" />
     <Compile Include="ViewModels\KamieńMilowy_ViewModel.cs" />

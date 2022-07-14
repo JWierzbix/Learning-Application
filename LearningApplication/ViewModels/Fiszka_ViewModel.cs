@@ -1,4 +1,5 @@
-﻿using LearningApplication.Stores;
+﻿using LearningApplication.Models;
+using LearningApplication.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,10 @@ namespace LearningApplication.ViewModels
         public ICommand Fiszka_ViewModel_Usuń { get; }
         public string Fiszka_ViewModel_PierwszaStrona => _fiszka.pierwsza_strona;
         public string Fiszka_ViewModel_DrugaStrona => _fiszka.druga_strona;
-        public Fiszka_ViewModel(Models.Fiszka fiszka)
+        public Fiszka_ViewModel(Models.Fiszka fiszka, Lista_Zestawów lista_zestawów, StwórzZestaw_ListaFiszek_ViewModel stwórzZestaw_ListaFisze_ViewModel)
         {
             _fiszka = fiszka;
-            Fiszka_ViewModel_Usuń = new Commands.Fiszka_ViewModel_UsuńCommand(this, _navigationStore);
+            Fiszka_ViewModel_Usuń = new Commands.Fiszka_ViewModel_UsuńCommand(_navigationStore, lista_zestawów);
         }
 
     }

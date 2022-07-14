@@ -11,19 +11,18 @@ using System.Threading.Tasks;
 namespace LearningApplication.Commands
 {
     class Stwórz_Zestaw_PrzyciskDodajFiszkęCommand : CommandBase
-    {
-        private StwórzZestaw_ViewModel _stwórz_zestaw_view_model;
-        private NavigationStore _navigationStore;       
-        
-        public Stwórz_Zestaw_PrzyciskDodajFiszkęCommand(StwórzZestaw_ViewModel stwórz_zestaw_view_model, NavigationStore navigationStore)
-        {
-            _stwórz_zestaw_view_model = stwórz_zestaw_view_model;
-            _navigationStore = navigationStore;            
+    {        
+        private NavigationStore _navigationStore;
+        private Lista_Zestawów _lista_zestawów;
+        public Stwórz_Zestaw_PrzyciskDodajFiszkęCommand(NavigationStore navigationStore, Lista_Zestawów lista_zestawów)
+        {            
+            _navigationStore = navigationStore;
+            _lista_zestawów = lista_zestawów;
         }
 
         public override void Execute(object parameter)
         {            
-            _navigationStore.CurrentViewModel = new StwórzZestaw_ViewModel(_navigationStore);   
+            _navigationStore.CurrentViewModel = new StwórzZestaw_ViewModel(_navigationStore, _lista_zestawów);   
         }
     }
 }

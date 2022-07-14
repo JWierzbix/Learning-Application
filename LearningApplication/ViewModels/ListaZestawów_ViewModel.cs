@@ -14,10 +14,10 @@ namespace LearningApplication.ViewModels
         public ListaZestawów_ListaZestawów_ViewModel ListaZestawów_ListaZestawów_ViewModel { get; }
         public ICommand Lista_Zestawów_Powrót { get; }
         //lista wszystkich zestawów 
-        public ListaZestawów_ViewModel(Stores.NavigationStore navigationStore)
+        public ListaZestawów_ViewModel(Stores.NavigationStore navigationStore, Lista_Zestawów lista_zestawów)
         {
             ListaZestawów_ListaZestawów_ViewModel = new ListaZestawów_ListaZestawów_ViewModel(navigationStore);
-            Lista_Zestawów_Powrót = new Commands.Lista_Zestawów_PowrótCommand(navigationStore);
+            Lista_Zestawów_Powrót = new Commands.Lista_Zestawów_PowrótCommand(navigationStore, lista_zestawów);
         }        
     }
 }

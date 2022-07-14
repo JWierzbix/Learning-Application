@@ -17,13 +17,14 @@ namespace LearningApplication
     public partial class App : Application
     {        
         private NavigationStore _navigationStore;
+        private readonly Lista_Zestawów lista_zestawów;
         public App()        
         {            
             _navigationStore = new NavigationStore();
         }
         protected override void OnStartup(StartupEventArgs e)
         {
-            _navigationStore.CurrentViewModel = new StronaGłówna_ViewModel(_navigationStore);
+            _navigationStore.CurrentViewModel = new StronaGłówna_ViewModel(_navigationStore,lista_zestawów);
 
             MainWindow = new MainWindow()
             {

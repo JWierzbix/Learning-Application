@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LearningApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace LearningApplication.ViewModels
 {
     class EdytujZestaw_ViewModel : ViewModelBase
     {
-        public EdytujZestaw_ListaFiszek_ViewModel EdytujZestaw_ListaFiszek_ViewModel { get; } //jest napisane dobrze - to ta sama klasa       
+        public StwórzZestaw_ListaFiszek_ViewModel EdytujZestaw_ListaFiszek_ViewModel { get; } //jest napisane dobrze - to ta sama klasa       
         private string _edytuj_zestaw_nazwa_zestawu;
         public string Edytuj_Zestaw_NazwaZestawu
         {
@@ -53,9 +54,9 @@ namespace LearningApplication.ViewModels
         public ICommand Edytuj_Zestaw_PrzyciskAnuluj { get; }
         public ICommand Edytuj_Zestaw_PrzyciskZapisz { get; }
         public ICommand Edytuj_Zestaw_PrzyciskDodajFiszkę { get; }
-        public EdytujZestaw_ViewModel()
+        public EdytujZestaw_ViewModel(Lista_Zestawów lista_zestawów)
         {
-            EdytujZestaw_ListaFiszek_ViewModel = new EdytujZestaw_ListaFiszek_ViewModel();
+            EdytujZestaw_ListaFiszek_ViewModel = new StwórzZestaw_ListaFiszek_ViewModel(lista_zestawów);
         }
     }
 }

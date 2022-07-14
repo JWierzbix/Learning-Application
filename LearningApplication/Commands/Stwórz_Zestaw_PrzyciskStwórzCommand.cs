@@ -13,16 +13,18 @@ namespace LearningApplication.Commands
     class Stwórz_Zestaw_PrzyciskStwórzCommand : CommandBase
     {
         private readonly NavigationStore _navigationStore;
-        private readonly StwórzZestaw_ViewModel _stwórz_Zestaw_view_model;
+        private readonly StwórzZestaw_ViewModel _stwórzZestaw_ViewModel;//potrzebne są dane
+        private Lista_Zestawów _lista_zestawów;
                
-        public Stwórz_Zestaw_PrzyciskStwórzCommand(StwórzZestaw_ViewModel stwórz_zestaw_view_model, NavigationStore navigationStore)
+        public Stwórz_Zestaw_PrzyciskStwórzCommand(NavigationStore navigationStore, Lista_Zestawów lista_zestawów, StwórzZestaw_ViewModel stwórzZestaw_ViewModel)
         {
-            _stwórz_Zestaw_view_model = stwórz_zestaw_view_model;
+            _lista_zestawów = lista_zestawów;
+            _stwórzZestaw_ViewModel = stwórzZestaw_ViewModel;            
             _navigationStore = navigationStore;            
         }
         public override void Execute(object parameter)
         {
-            _navigationStore.CurrentViewModel = new ListaZestawów_ViewModel(_navigationStore);
+            _navigationStore.CurrentViewModel = new ListaZestawów_ViewModel(_navigationStore, _lista_zestawów);
         }
         
     }

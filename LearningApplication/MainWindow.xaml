@@ -23,6 +23,21 @@
             <DataTemplate DataType="{x:Type vms:ListaZestawów_ViewModel}">
                 <views:ListaZestawów_View />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:EdytujZestaw_ViewModel}">
+                <views:EdytujZestaw_View />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:StrefaNauki_1_ViewModel}">
+                <views:StrefaNauki_1_View />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:StrefaNauki_2_ViewModel}">
+                <views:StrefaNauki_2_View />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:ZakończenieZestawu_ViewModel}">
+                <views:ZakończenieZestawu_View />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:KamieńMilowy_ViewModel}">
+                <views:KamieńMilowy_View />
+            </DataTemplate>
         </Grid.Resources>
 
         <ContentControl Content="{Binding CurrentViewModel}"/>

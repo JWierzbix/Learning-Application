@@ -15,10 +15,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />           
         </Grid.RowDefinitions>
         <Grid Row="0">
             <Grid.ColumnDefinitions>
@@ -72,76 +69,10 @@
             HorizontalAlignment="Center"
             Width="900"
             Padding="400 2 0 2"
-            />
-        <Grid Grid.Row="3"
-              Margin="5"              
-              >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="66.5"/>
-                <ColumnDefinition Width="653.5"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <TextBlock 
-                FontSize="19"
-                Grid.Row="0"
-                Grid.Column="0"
-                Text="Pierwsza Strona:"
-                Margin="20 0 0 10" Grid.ColumnSpan="2"
-            />
-            <TextBox
-                Text="{Binding Stwórz_Zestaw_PierwszaStronaFiszki, UpdateSourceTrigger=PropertyChanged}"
-                FontSize="19"
-                Grid.Row="1"
-                Grid.Column="0"
-                Width="700"
-                Margin="20,0,0,0" Grid.ColumnSpan="2"
-                />
-            <TextBlock 
-                FontSize="19"
-                Grid.Row="2"
-                Grid.Column="0"
-                Text="Druga Strona:"
-                Margin="20 5 0 10" Grid.ColumnSpan="2"
-            />
-            <TextBox
-                Text="{Binding Stwórz_Zestaw_DrugaStronaFiszki, UpdateSourceTrigger=PropertyChanged}"
-                FontSize="19"
-                Grid.Row="3"
-                Grid.Column="0"
-                Width="700"
-                Margin="20 0 0 10" Grid.ColumnSpan="2"
-                />
-            <Button
-                FontSize="19"
-                Width="100"
-                Grid.RowSpan="4"
-                Grid.Column="2"
-                Content="Dodaj"
-                Height="50"
-                HorizontalAlignment="Right"                
-                Margin="30 0 0 40" 
-                Grid.Row="1"
-                Command="{Binding Stwórz_Zestaw_PrzyciskDodajFiszkę}"
-                />
-        </Grid>
-        <TextBlock 
-            Background="#FFC000"
-            FontSize="19"
-            Grid.Row="4"
-            Text="Lista Fiszek:"            
-            HorizontalAlignment="Center"
-            Width="900"
-            Padding="400 2 0 2"
-            Margin="0 5 0 0"
-            />
+            />  
+        
         <components:StwórzZestaw_ListaFiszek_Component 
-            Grid.Row="5"
+            Grid.Row="2"
             Margin=" 0 10 18 0"
             DataContext="{Binding StwórzZestaw_ListaFiszek}"
             />        

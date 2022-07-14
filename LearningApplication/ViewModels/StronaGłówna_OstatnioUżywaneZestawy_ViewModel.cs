@@ -1,4 +1,5 @@
 ﻿using LearningApplication.Commands;
+using LearningApplication.Models;
 using LearningApplication.Stores;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace LearningApplication.ViewModels
     {
         private readonly ObservableCollection<Zestaw_ViewModel> _stronaGłówna_OstatnioUżywaneZestawy;        
         public IEnumerable<Zestaw_ViewModel> StronaGłówna_OstatnioUżywaneZestawy => _stronaGłówna_OstatnioUżywaneZestawy;
-        public StronaGłówna_OstatnioUżywaneZestawy_ViewModel(NavigationStore navigationStore)
+        public StronaGłówna_OstatnioUżywaneZestawy_ViewModel(NavigationStore navigationStore, StronaGłówna_ViewModel strona_główna_ViewModel)
         {            
             _stronaGłówna_OstatnioUżywaneZestawy = new ObservableCollection<Zestaw_ViewModel>();
             _stronaGłówna_OstatnioUżywaneZestawy.Add(new Zestaw_ViewModel(new Models.Zestaw("zestaw 1", new List<Models.Fiszka>()), navigationStore));
