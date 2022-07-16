@@ -9,20 +9,17 @@ using System.Threading.Tasks;
 
 namespace LearningApplication.Commands
 {
-    class Zestaw_ViewModel_WyczyśćPostępy_Command:CommandBase
+    class EdytujZestaw_Anuluj_Command : CommandBase
     {
         private NavigationStore _navigationStore;
         private Lista_Zestawów _lista_zestawów;
-        private Zestaw _zestaw;
-        public Zestaw_ViewModel_WyczyśćPostępy_Command(NavigationStore navigationStore,Lista_Zestawów lista_zestawów, Zestaw zestaw)
+        public EdytujZestaw_Anuluj_Command(NavigationStore navigationStore, Lista_Zestawów lista_zestawów)
         {
             _navigationStore = navigationStore;
-            _lista_zestawów = lista_zestawów;
-            _zestaw = zestaw;
+            _lista_zestawów = lista_zestawów;            
         }
         public override void Execute(object parameter)
         {
-            _lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].WyczyśćPostępy();
             if (_navigationStore.Id == 12)
             {
                 _navigationStore.CurrentViewModel = new StronaGłówna_ViewModel(_navigationStore, _lista_zestawów);

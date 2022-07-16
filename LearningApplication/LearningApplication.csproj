@@ -56,6 +56,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\EdytujZestaw_Anuluj_Command.cs" />
+    <Compile Include="Commands\EdytujZestaw_Fiszka_Usuń_Command.cs" />
+    <Compile Include="Commands\EdytujZestaw_PrzyciskDodajFiszkę_Command.cs" />
+    <Compile Include="Commands\EdytujZestaw_PrzyciskZapisz_Command.cs" />
+    <Compile Include="Commands\EdytujZestaw_Zapisz_Command.cs" />
     <Compile Include="Commands\Fiszka_ViewModel_UsuńCommand.cs" />
     <Compile Include="Commands\Lista_Zestawów_PowrótCommand.cs" />
     <Compile Include="Commands\Strona_Główna_StwórzZestaw_Command.cs" />
@@ -79,7 +84,9 @@
     <Compile Include="Components\StwórzZestaw_ListaFiszek_Component.xaml.cs">
       <DependentUpon>StwórzZestaw_ListaFiszek_Component.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Function.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
+    <Compile Include="ViewModels\EdytujZestaw_ListaFiszek_ViewModel.cs" />
     <Compile Include="ViewModels\EdytujZestaw_ViewModel.cs" />
     <Compile Include="ViewModels\Fiszka_ViewModel.cs" />
     <Compile Include="ViewModels\KamieńMilowy_ViewModel.cs" />
@@ -183,7 +190,6 @@
   <ItemGroup>
     <Compile Include="Models\Fiszka.cs" />
     <Compile Include="Models\Lista_Zestawów.cs" />
-    <Compile Include="Models\Ostatnio_Używane_Zestawy.cs" />
     <Compile Include="Models\Zestaw.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

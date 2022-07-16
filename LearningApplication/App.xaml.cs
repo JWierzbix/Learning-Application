@@ -19,7 +19,8 @@ namespace LearningApplication
         private NavigationStore _navigationStore;
         private readonly Lista_Zestawów lista_zestawów;
         public App()        
-        {            
+        {
+            lista_zestawów = new Lista_Zestawów();
             _navigationStore = new NavigationStore();
         }
         protected override void OnStartup(StartupEventArgs e)

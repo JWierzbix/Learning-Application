@@ -1,4 +1,6 @@
-﻿using LearningApplication.Models;
+﻿using LearningApplication.Commands;
+using LearningApplication.Models;
+using LearningApplication.Stores;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,10 +11,11 @@ using System.Windows.Input;
 
 namespace LearningApplication.ViewModels
 {
-    class EdytujZestaw_ViewModel : ViewModelBase
+    public class EdytujZestaw_ViewModel : ViewModelBase
     {
-        public StwórzZestaw_ListaFiszek_ViewModel EdytujZestaw_ListaFiszek_ViewModel { get; } //jest napisane dobrze - to ta sama klasa       
+        public EdytujZestaw_ListaFiszek_ViewModel EdytujZestaw_ListaFiszek_ViewModel { get; } //jest napisane dobrze - to ta sama klasa       
         private string _edytuj_zestaw_nazwa_zestawu;
+        private string _edytuj_zestaw_stara_nazwa_zestawu;
         public string Edytuj_Zestaw_NazwaZestawu
         {
             get
@@ -52,11 +55,14 @@ namespace LearningApplication.ViewModels
             }
         }
         public ICommand Edytuj_Zestaw_PrzyciskAnuluj { get; }
-        public ICommand Edytuj_Zestaw_PrzyciskZapisz { get; }
-        public ICommand Edytuj_Zestaw_PrzyciskDodajFiszkę { get; }
-        public EdytujZestaw_ViewModel(Lista_Zestawów lista_zestawów)
+        public ICommand Edytuj_Zestaw_PrzyciskZapisz { get; }        
+        public EdytujZestaw_ViewModel(NavigationStore navigationStore, Lista_Zestawów lista_zestawów, Zestaw_ViewModel zestaw_ViewModel)
         {
-            EdytujZestaw_ListaFiszek_ViewModel = new StwórzZestaw_ListaFiszek_ViewModel(lista_zestawów);
+            _edytuj_zestaw_stara_nazwa_zestawu = zestaw_ViewModel.Zestaw_ViewModel_NazwaZestawu;
+            Edytuj_Zestaw_NazwaZestawu = zestaw_ViewModel.Zestaw_ViewModel_NazwaZestawu;
+            EdytujZestaw_ListaFiszek_ViewModel = new EdytujZestaw_ListaFiszek_ViewModel(navigationStore,this,zestaw_ViewModel);
+            Edytuj_Zestaw_PrzyciskAnuluj = new EdytujZestaw_Anuluj_Command(navigationStore, lista_zestawów);
+            Edytuj_Zestaw_PrzyciskZapisz = new EdytujZestaw_PrzyciskZapisz_Command(navigationStore, lista_zestawów, this, _edytuj_zestaw_stara_nazwa_zestawu);
         }
     }
 }

@@ -1,16 +1,18 @@
-﻿using System;
+﻿using LearningApplication.ViewModels;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LearningApplication.Models
 {
-    internal class Lista_Zestawów : IEnumerable<KeyValuePair<string,Zestaw>>
+    public class Lista_Zestawów : IEnumerable<KeyValuePair<string,Zestaw>>
     {
         // słownik składa się z nazyw zestawu i samej instancji zestawu
-        private Dictionary<string, Zestaw> lista_zestawów;
+        public Dictionary<string, Zestaw> lista_zestawów { get; }           
         public Lista_Zestawów()
         {
             lista_zestawów = new Dictionary<string, Zestaw>();
@@ -20,19 +22,7 @@ namespace LearningApplication.Models
             if (lista_zestawów.Count == 0)
                 return true;
             else return false;
-        }
-        public void UsuńFiszkę(string nazwa_zestawu, string pierwsza_strona, string druga_strona)
-        {
-            int i = 0;
-            for (i = 0; i < lista_zestawów[nazwa_zestawu].lista_fiszek.Count; i++)
-            {
-                if (lista_zestawów[nazwa_zestawu].lista_fiszek[i].pierwsza_strona == pierwsza_strona
-                    && lista_zestawów[nazwa_zestawu].lista_fiszek[i].druga_strona == druga_strona)
-                {
-                    lista_zestawów[nazwa_zestawu].lista_fiszek.RemoveAt(i);
-                }
-            }
-        }
+        }        
         public IEnumerator<KeyValuePair<string, Zestaw>> GetEnumerator()
         {
             return lista_zestawów.GetEnumerator();
@@ -53,10 +43,22 @@ namespace LearningApplication.Models
                 return false;
             }
         }
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             return ((IEnumerable)lista_zestawów).GetEnumerator();
+        }
+        public static Dictionary<string, Zestaw> OstatnioUżywaneZestawy(Dictionary<string, Zestaw> lista_zestawów)
+        {
+            var uaktualnione_ostatnio_używane_zestawy = new Dictionary<string, Zestaw>();
+            TimeSpan dwa_tygodnie = new TimeSpan(14, 0, 0, 0);
+            foreach (var z in lista_zestawów)
+            {
+                if (DateTime.Now.Subtract(z.Value.data_używania) < dwa_tygodnie)
+                {
+                    uaktualnione_ostatnio_używane_zestawy.Add(z.Value.nazwa_zestawu, z.Value);
+                }
+            }
+            return uaktualnione_ostatnio_używane_zestawy;
         }
     }
 }

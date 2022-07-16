@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearningApplication.Models
 {
-    internal class Fiszka
+    public class Fiszka
     {
         public string pierwsza_strona { get; set; }//zobaczy jak aplikacja się rozwinie, w razie czego zmieni się klasę object
         public string druga_strona { get; set; }

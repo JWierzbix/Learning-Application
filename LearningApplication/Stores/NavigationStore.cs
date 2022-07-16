@@ -19,7 +19,9 @@ namespace LearningApplication.Stores
                 OnCurrentViewModelChanged();
             }
         }
-
+        public int Id { get; set; }
+        // 12 - strona główna
+        // 33 - lista zestawów
         private void OnCurrentViewModelChanged()
         {
             CurrentViewModelChanged?.Invoke();

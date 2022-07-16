@@ -12,17 +12,17 @@ namespace LearningApplication.Commands
 {
     class Fiszka_ViewModel_UsuńCommand: CommandBase
     {
-        private NavigationStore _navigationStore;
-        private Lista_Zestawów _lista_zestawów;
-        public Fiszka_ViewModel_UsuńCommand(NavigationStore navigationStore, Lista_Zestawów lista_zestawów)
+        private Fiszka_ViewModel _fiszka;
+        private StwórzZestaw_ListaFiszek_ViewModel _stwórzZestaw_ListaFiszek_ViewModel;
+        public Fiszka_ViewModel_UsuńCommand(Fiszka_ViewModel fiszka, StwórzZestaw_ListaFiszek_ViewModel stwórzZestaw_ListaFiszek_ViewModel)
         {
-            _navigationStore = navigationStore;
-            _lista_zestawów = lista_zestawów;
+            _fiszka = fiszka;
+            _stwórzZestaw_ListaFiszek_ViewModel = stwórzZestaw_ListaFiszek_ViewModel;
         }
 
         public override void Execute(object parameter)
-        {            
-            _navigationStore.CurrentViewModel = new StwórzZestaw_ViewModel(_navigationStore, _lista_zestawów);
+        {
+            ((ObservableCollection<Fiszka_ViewModel>)_stwórzZestaw_ListaFiszek_ViewModel.StwórzZestaw_ListaFiszek).Remove(_fiszka);            
         }
     }
 }

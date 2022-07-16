@@ -1,4 +1,5 @@
 ﻿using LearningApplication.Commands;
+using LearningApplication.Models;
 using LearningApplication.Stores;
 using System;
 using System.Collections.Generic;
@@ -9,14 +10,21 @@ using System.Threading.Tasks;
 
 namespace LearningApplication.ViewModels
 {
-    class ListaZestawów_ListaZestawów_ViewModel: ViewModelBase
+    public class ListaZestawów_ListaZestawów_ViewModel: ViewModelBase
     {
-        private readonly ObservableCollection<Zestaw_ViewModel> _listaZestawów_ListaZestawów;        
-        public IEnumerable<Zestaw_ViewModel> ListaZestawów_ListaZestawów => _listaZestawów_ListaZestawów;
-        public ListaZestawów_ListaZestawów_ViewModel(NavigationStore navigationStore)
+        private ObservableCollection<Zestaw_ViewModel> _listaZestawów_ListaZestawów;        
+        public IEnumerable<Zestaw_ViewModel> ListaZestawów_ListaZestawów
         {
-            _listaZestawów_ListaZestawów = new ObservableCollection<Zestaw_ViewModel>();
-            _listaZestawów_ListaZestawów.Add(new Zestaw_ViewModel(new Models.Zestaw("zestaw 2", new List<Models.Fiszka>()), navigationStore));            
+            get => _listaZestawów_ListaZestawów;
+            set
+            {
+                _listaZestawów_ListaZestawów = (ObservableCollection<Zestaw_ViewModel>)value;
+                OnPropertyChanged(nameof(ListaZestawów_ListaZestawów));
+            }
         }
+        public ListaZestawów_ListaZestawów_ViewModel(NavigationStore navigationStore, Lista_Zestawów lista_zestawów)
+        {
+            _listaZestawów_ListaZestawów = Helpers.Function.ZamieńNaCollectionZestawów(lista_zestawów, navigationStore);      
+        }        
     }
 }

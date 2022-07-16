@@ -14,10 +14,12 @@ namespace LearningApplication.Commands
     {
         private readonly NavigationStore _navigationStore;
         private Lista_Zestawów _lista_zestawów;
-        public Strona_Główna_StwórzZestaw_Command(NavigationStore navigationStore, Lista_Zestawów lista_zestawów)
+        private StronaGłówna_OstatnioUżywaneZestawy_ViewModel _stronaGłówna_OstatnioUżywaneZestawy_ViewModel;
+        public Strona_Główna_StwórzZestaw_Command(NavigationStore navigationStore, Lista_Zestawów lista_zestawów, StronaGłówna_OstatnioUżywaneZestawy_ViewModel stronaGłówna_OstatnioUżywaneZestawy_ViewModel)
         {
             _navigationStore = navigationStore;
             _lista_zestawów = lista_zestawów;
+            _stronaGłówna_OstatnioUżywaneZestawy_ViewModel = stronaGłówna_OstatnioUżywaneZestawy_ViewModel;
         }
 
         public override void Execute(object parameter)

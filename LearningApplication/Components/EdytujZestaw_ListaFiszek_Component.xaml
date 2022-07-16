@@ -5,49 +5,125 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LearningApplication.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="855">
-    <ListView                        
+             d:DesignHeight="500" d:DesignWidth="855">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid 
+            Grid.Row="0"
+            Margin="5"              
+              >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="66.5"/>
+                <ColumnDefinition Width="653.5"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock 
+                FontSize="19"
+                Grid.Row="0"
+                Grid.Column="0"
+                Text="Pierwsza Strona:"
+                Margin="20 0 0 10" Grid.ColumnSpan="2"
+            />
+            <TextBox
+                Text="{Binding Edytuj_Zestaw_PierwszaStronaFiszki, UpdateSourceTrigger=PropertyChanged}"
+                FontSize="19"
+                Grid.Row="1"
+                Grid.Column="0"
+                Width="700"
+                Margin="20,0,0,0" Grid.ColumnSpan="2"
+                />
+            <TextBlock 
+                FontSize="19"
+                Grid.Row="2"
+                Grid.Column="0"
+                Text="Druga Strona:"
+                Margin="20 5 0 10" Grid.ColumnSpan="2"
+            />
+            <TextBox
+                Text="{Binding Edytuj_Zestaw_DrugaStronaFiszki, UpdateSourceTrigger=PropertyChanged}"
+                FontSize="19"
+                Grid.Row="3"
+                Grid.Column="0"
+                Width="700"
+                Margin="20 0 0 10" Grid.ColumnSpan="2"
+                />
+            <Button
+                FontSize="19"
+                Width="100"
+                Grid.RowSpan="4"
+                Grid.Column="2"
+                Content="Dodaj"
+                Height="50"
+                HorizontalAlignment="Right"                
+                Margin="30 0 0 40" 
+                Grid.Row="1"
+                Command="{Binding EdytujZestaw_PrzyciskDodajFiszkę}"
+                />
+        </Grid>
+        <TextBlock 
+            Background="#FFC000"
+            FontSize="19"
+            Grid.Row="1"
+            Text="Lista Fiszek:"            
+            HorizontalAlignment="Center"
+            Width="900"
+            Padding="400 2 0 2"
+            Margin="0 5 0 0"
+            />
+        <ListView   
+            Grid.Row="2"
             Width="855"
             Height="200"
             Background="LightYellow"
-            ItemsSource="{Binding EdytujZestaw_LisaFiszek}"            
+            ItemsSource="{Binding EdytujZestaw_ListaFiszek}"            
             >
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel Width="150">
-                        <TextBlock
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Width="150">
+                            <TextBlock
                                   Text="Pierwsza Strona:"
                                   FontSize="15"
                                   FontWeight="Bold"                                            
                                   />
-                        <TextBlock
+                            <TextBlock
                                   Text="Druga Strona:"
                                   FontSize="15"
                                   FontWeight="Bold"                                            
                                   />
-                    </StackPanel>
-                    <StackPanel Width="580">
-                        <TextBlock
+                        </StackPanel>
+                        <StackPanel Width="580">
+                            <TextBlock
                                   Text="{Binding Fiszka_ViewModel_PierwszaStrona}"
                                   FontSize="15"  
                                   TextWrapping="Wrap"
                                   />
-                        <TextBlock
+                            <TextBlock
                                   TextWrapping="Wrap"
                                   Text="{Binding Fiszka_ViewModel_DrugaStrona}"
                                   FontSize="15"                                          
                                   />
-                    </StackPanel>
-                    <Button 
+                        </StackPanel>
+                        <Button 
                            Command="{Binding Fiszka_ViewModel_Usuń}"
                            Content="Usuń"
                            Width="80"
                            Height="35"
                            Margin="3"
                            />
-                </StackPanel>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
 </UserControl>

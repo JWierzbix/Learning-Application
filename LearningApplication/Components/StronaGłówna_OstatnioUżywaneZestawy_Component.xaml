@@ -9,7 +9,7 @@
     <ListView                  
                 Width="550" Height="450" 
                 Background="LightYellow"
-                ItemsSource="{Binding StronaGłówna_OstatnioUżywaneZestawy}"
+                ItemsSource="{Binding StronaGłówna_OstatnioUżywaneZestawy_Component}"
                 >
         <ListView.ItemTemplate>
             <DataTemplate>

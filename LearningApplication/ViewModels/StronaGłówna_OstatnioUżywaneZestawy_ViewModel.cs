@@ -12,12 +12,25 @@ namespace LearningApplication.ViewModels
 {
     class StronaGłówna_OstatnioUżywaneZestawy_ViewModel: ViewModelBase
     {
-        private readonly ObservableCollection<Zestaw_ViewModel> _stronaGłówna_OstatnioUżywaneZestawy;        
-        public IEnumerable<Zestaw_ViewModel> StronaGłówna_OstatnioUżywaneZestawy => _stronaGłówna_OstatnioUżywaneZestawy;
-        public StronaGłówna_OstatnioUżywaneZestawy_ViewModel(NavigationStore navigationStore, StronaGłówna_ViewModel strona_główna_ViewModel)
-        {            
+        private ObservableCollection<Zestaw_ViewModel> _stronaGłówna_OstatnioUżywaneZestawy;        
+        public IEnumerable<Zestaw_ViewModel> StronaGłówna_OstatnioUżywaneZestawy_Component
+        {
+            get => _stronaGłówna_OstatnioUżywaneZestawy;
+            set
+            {
+                _stronaGłówna_OstatnioUżywaneZestawy = (ObservableCollection<Zestaw_ViewModel>)value;
+                OnPropertyChanged(nameof(StronaGłówna_OstatnioUżywaneZestawy_Component));
+            }
+        }
+        public StronaGłówna_OstatnioUżywaneZestawy_ViewModel(NavigationStore navigationStore, Lista_Zestawów lista_zestawów)
+        {
+            Dictionary<string, Zestaw> słownik_zestawów = Lista_Zestawów.OstatnioUżywaneZestawy(lista_zestawów.lista_zestawów);
             _stronaGłówna_OstatnioUżywaneZestawy = new ObservableCollection<Zestaw_ViewModel>();
-            _stronaGłówna_OstatnioUżywaneZestawy.Add(new Zestaw_ViewModel(new Models.Zestaw("zestaw 1", new List<Models.Fiszka>()), navigationStore));
+            foreach(var item in słownik_zestawów)
+            {
+                Zestaw_ViewModel z = new Zestaw_ViewModel(item.Value, navigationStore, lista_zestawów);
+                _stronaGłówna_OstatnioUżywaneZestawy.Add(z);
+            }
         }
     }
 }

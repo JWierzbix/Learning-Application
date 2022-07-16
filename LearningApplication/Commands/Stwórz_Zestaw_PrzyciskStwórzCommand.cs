@@ -1,4 +1,5 @@
-﻿using LearningApplication.Models;
+﻿using LearningApplication.Helpers;
+using LearningApplication.Models;
 using LearningApplication.Stores;
 using LearningApplication.ViewModels;
 using System;
@@ -24,6 +25,9 @@ namespace LearningApplication.Commands
         }
         public override void Execute(object parameter)
         {
+            //tworzymy odpowiedni typ listy fiszek do dodawania
+            List<Fiszka> nowa_lista = Function.ZamieńNaListęFiszek(_stwórzZestaw_ViewModel.StwórzZestaw_ListaFiszek.StwórzZestaw_ListaFiszek);
+            _lista_zestawów.Utwórz_Zestaw(_stwórzZestaw_ViewModel.Stwórz_Zestaw_NazwaZestawu,nowa_lista);
             _navigationStore.CurrentViewModel = new ListaZestawów_ViewModel(_navigationStore, _lista_zestawów);
         }
         
