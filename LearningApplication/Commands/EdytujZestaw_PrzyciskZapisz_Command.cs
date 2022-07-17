@@ -25,9 +25,8 @@ namespace LearningApplication.Commands
         }        
         public override void Execute(object parameter)
         {
-            List<Fiszka> nowa_lista_fiszek = Function.ZamieńNaListęFiszek(_edytujZestaw_ViewModel.EdytujZestaw_ListaFiszek_ViewModel.EdytujZestaw_ListaFiszek);
-            _lista_zestawów.lista_zestawów.Remove(_stara_nazwa_zestawu);
-            _lista_zestawów.Utwórz_Zestaw(_edytujZestaw_ViewModel.Edytuj_Zestaw_NazwaZestawu, nowa_lista_fiszek);           
+            List<Fiszka> nowa_lista_fiszek = Function.ZamieńNaListęFiszek(_edytujZestaw_ViewModel.EdytujZestaw_ListaFiszek_ViewModel.EdytujZestaw_ListaFiszek);           
+            _lista_zestawów.Edytuj_Zestaw(_stara_nazwa_zestawu,_edytujZestaw_ViewModel.Edytuj_Zestaw_NazwaZestawu, nowa_lista_fiszek);           
             _navigationStore.CurrentViewModel = new ListaZestawów_ViewModel(_navigationStore,_lista_zestawów);
         }
     }

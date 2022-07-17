@@ -43,6 +43,23 @@ namespace LearningApplication.Models
                 return false;
             }
         }
+        public bool Edytuj_Zestaw(string stara_nazwa_zestawu,string nowa_nazwa_zestawu, List<Fiszka> lista_fiszek)
+        {
+            //jeżeli nasza lista zestawów nie posiada zestawu z taką nazwą jaką wpisaliśmy, dopiero wtedy możemy utworzyć zestaw
+            if (!lista_zestawów.ContainsKey(nowa_nazwa_zestawu) || stara_nazwa_zestawu==nowa_nazwa_zestawu)
+            {
+                lista_zestawów[stara_nazwa_zestawu].Zmień_Nazwę(nowa_nazwa_zestawu);
+                Zestaw z = new Zestaw(nowa_nazwa_zestawu,lista_fiszek);
+                lista_zestawów.Remove(stara_nazwa_zestawu);
+                lista_zestawów.Add(nowa_nazwa_zestawu, z);
+                lista_zestawów[nowa_nazwa_zestawu].EdytowanoZestaw();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         IEnumerator IEnumerable.GetEnumerator()
         {
             return ((IEnumerable)lista_zestawów).GetEnumerator();
@@ -53,7 +70,7 @@ namespace LearningApplication.Models
             TimeSpan dwa_tygodnie = new TimeSpan(14, 0, 0, 0);
             foreach (var z in lista_zestawów)
             {
-                if (DateTime.Now.Subtract(z.Value.data_używania) < dwa_tygodnie)
+                if (DateTime.Now.Subtract(z.Value.Data_Używania) < dwa_tygodnie)
                 {
                     uaktualnione_ostatnio_używane_zestawy.Add(z.Value.nazwa_zestawu, z.Value);
                 }

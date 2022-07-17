@@ -22,7 +22,7 @@ namespace LearningApplication.ViewModels
         public Zestaw_ViewModel(Models.Zestaw zestaw, NavigationStore navigationStore,Lista_Zestawów lista_zestawów)
         {
             _zestaw = zestaw;            
-            Zestaw_ViewModel_UczSię = new Zestaw_ViewModel_UczSię_Command(navigationStore);
+            Zestaw_ViewModel_UczSię = new Zestaw_ViewModel_UczSię_Command(navigationStore,lista_zestawów,zestaw);
             Zestaw_ViewModel_WyczyśćPostępy = new Zestaw_ViewModel_WyczyśćPostępy_Command(navigationStore,lista_zestawów,_zestaw);
             Zestaw_ViewModel_Edytuj = new Zestaw_ViewModel_Edytuj_Command(navigationStore,lista_zestawów,this);
             Zestaw_ViewModel_Usuń = new Zestaw_ViewModel_Usuń_Command(navigationStore,lista_zestawów,zestaw);

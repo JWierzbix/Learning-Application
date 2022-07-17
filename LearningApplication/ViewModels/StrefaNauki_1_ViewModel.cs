@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LearningApplication.Models;
+using LearningApplication.Stores;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +10,26 @@ using System.Windows.Input;
 namespace LearningApplication.ViewModels
 {
     class StrefaNauki_1_ViewModel : ViewModelBase
-    {
-        private Models.Fiszka _fiszka;
-        public StrefaNauki_1_ViewModel(ref Models.Fiszka fiszka)
+    {        
+        private NavigationStore _navigationStore;
+        private Lista_Zestawów _lista_zestawów;
+        private Zestaw _zestaw;
+        private string[] _dane;
+        public StrefaNauki_1_ViewModel(NavigationStore navigationStore, Lista_Zestawów lista_zestawów, Zestaw zestaw, string[] dane)
         {
-            _fiszka = fiszka;
-        }
+            _navigationStore = navigationStore;
+            _lista_zestawów = lista_zestawów;
+            _zestaw = zestaw;
+            _dane = dane;
+            //uzupełnianie danych
+            Strefa_Nauki_1_Słowo = zestaw.Pojęcie+" :";
+            Strefa_Nauki_1_Odpowiedź_A_Text = "A. " + dane[0];
+            Strefa_Nauki_1_Odpowiedź_B_Text = "B. " + dane[1];
+            Strefa_Nauki_1_Odpowiedź_C_Text = "C. " + dane[2];
+            Strefa_Nauki_1_Odpowiedź_D_Text = "D. " + dane[3];
+            Strefa_Nauki_1_NazwaZestawu = zestaw.nazwa_zestawu;
+        }      
+
         private string _strefa_nauki_1_słowo;
         public string Strefa_Nauki_1_Słowo
         {
