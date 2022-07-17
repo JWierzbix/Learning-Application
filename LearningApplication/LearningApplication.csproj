@@ -68,6 +68,7 @@
     <Compile Include="Commands\StrefaNauki_1_Odpowiedź_C_Command.cs" />
     <Compile Include="Commands\StrefaNauki_1_Odpowiedź_D_Command.cs" />
     <Compile Include="Commands\StrefaNauki_1_Powrót_Command.cs" />
+    <Compile Include="Commands\StrefaNauki_2_Zatwierdź_Command.cs" />
     <Compile Include="Commands\Strona_Główna_StwórzZestaw_Command.cs" />
     <Compile Include="Commands\Strona_Główna_WybierzZestaw_Command.cs" />
     <Compile Include="Commands\StwórzZestaw_ViewModel_AnulujCommand.cs" />

@@ -1,4 +1,5 @@
-﻿using LearningApplication.Models;
+﻿using LearningApplication.Commands;
+using LearningApplication.Models;
 using LearningApplication.Stores;
 using System;
 using System.Collections.Generic;
@@ -13,14 +14,16 @@ namespace LearningApplication.ViewModels
     {        
         private NavigationStore _navigationStore;
         private Lista_Zestawów _lista_zestawów;
-        private Zestaw _zestaw;
-        private string[] _dane;
-        public StrefaNauki_2_ViewModel(NavigationStore navigationStore, Lista_Zestawów lista_zestawów, Zestaw zestaw, string[] dane)
+        private Zestaw _zestaw;    
+        public StrefaNauki_2_ViewModel(NavigationStore navigationStore, Lista_Zestawów lista_zestawów, Zestaw zestaw)
         {
             _navigationStore = navigationStore;
             _lista_zestawów = lista_zestawów;
             _zestaw = zestaw;
-            _dane = dane;
+            Strefa_Nauki_2_NazwaZestawu = _zestaw.nazwa_zestawu;
+            Strefa_Nauki_2_Słowo = _zestaw.Pojęcie;
+            Strefa_Nauki_2_Zatwierdź = new StrefaNauki_2_Zatwierdź_Command(navigationStore, lista_zestawów, zestaw, this);
+            Strefa_Nauki_2_Powrót = new StrefaNauki_1_Powrót_Command(navigationStore, lista_zestawów);
         }
         private string _strefa_nauki_2_słowo;
         public string Strefa_Nauki_2_Słowo
@@ -55,6 +58,11 @@ namespace LearningApplication.ViewModels
             {
                 return _strefa_nauki_2_nazwa_zestawu;
             }
+            set
+            {
+                _strefa_nauki_2_nazwa_zestawu = value;
+                OnPropertyChanged(nameof(Strefa_Nauki_2_NazwaZestawu));
+            }
         }
         private string _strefa_nauki_2_poprawność_odpowiedzi;
         public string Strefa_Nauki_2_PoprawnośćOdpowiedzi
@@ -62,6 +70,11 @@ namespace LearningApplication.ViewModels
             get
             {
                 return _strefa_nauki_2_poprawność_odpowiedzi;
+            }
+            set
+            {
+                _strefa_nauki_2_poprawność_odpowiedzi = value;
+                OnPropertyChanged(nameof(Strefa_Nauki_2_PoprawnośćOdpowiedzi));
             }
         }
         public ICommand Strefa_Nauki_2_Powrót { get; }

@@ -1,4 +1,5 @@
-﻿using LearningApplication.Models;
+﻿using LearningApplication.Commands;
+using LearningApplication.Models;
 using LearningApplication.Stores;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,13 @@ namespace LearningApplication.ViewModels
             Strefa_Nauki_1_Odpowiedź_C_Text = "C. " + dane[2];
             Strefa_Nauki_1_Odpowiedź_D_Text = "D. " + dane[3];
             Strefa_Nauki_1_NazwaZestawu = zestaw.nazwa_zestawu;
+            _strefa_Nauki_1_PoprawnośćOdpowiedzi = "";
+            //komendy
+            Strefa_Nauki_1_Odpowiedź_A_Przycisk = new StrefaNauki_1_Odpowiedź_A_Command(navigationStore, lista_zestawów, zestaw, dane,this);
+            Strefa_Nauki_1_Odpowiedź_B_Przycisk = new StrefaNauki_1_Odpowiedź_B_Command(navigationStore, lista_zestawów, zestaw, dane,this);
+            Strefa_Nauki_1_Odpowiedź_C_Przycisk = new StrefaNauki_1_Odpowiedź_C_Command(navigationStore, lista_zestawów, zestaw, dane,this);
+            Strefa_Nauki_1_Odpowiedź_D_Przycisk = new StrefaNauki_1_Odpowiedź_D_Command(navigationStore, lista_zestawów, zestaw, dane,this);
+            Strefa_Nauki_1_Powrót = new StrefaNauki_1_Powrót_Command(navigationStore, lista_zestawów);
         }      
 
         private string _strefa_nauki_1_słowo;
@@ -104,7 +112,16 @@ namespace LearningApplication.ViewModels
         }
         public ICommand Strefa_Nauki_1_Odpowiedź_D_Przycisk { get; }
         // Poprawność Odpowiedzi        
-        public string Strefa_Nauki_1_PoprawnośćOdpowiedzi { get; }        
+        private string _strefa_Nauki_1_PoprawnośćOdpowiedzi;
+        public string Strefa_Nauki_1_PoprawnośćOdpowiedzi
+        {
+            get => _strefa_Nauki_1_PoprawnośćOdpowiedzi;
+            set
+            {
+                _strefa_Nauki_1_PoprawnośćOdpowiedzi = value;
+                OnPropertyChanged(nameof(Strefa_Nauki_1_PoprawnośćOdpowiedzi));
+            }
+        }   
         //Inne Informacje        
         public string Strefa_Nauki_1_NazwaZestawu { get; }
         

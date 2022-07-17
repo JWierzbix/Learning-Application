@@ -10,31 +10,29 @@ using System.Threading.Tasks;
 
 namespace LearningApplication.Commands
 {
-    class StrefaNauki_1_Odpowiedź_D_Command : CommandBase
+    class StrefaNauki_2_Zatwierdź_Command: CommandBase
     {
         private NavigationStore _navigationStore;
         private Lista_Zestawów _lista_zestawów;
         private Zestaw _zestaw;
-        private string[] _dane;
-        private StrefaNauki_1_ViewModel _strefaNauki_1_ViewModel;
-        public StrefaNauki_1_Odpowiedź_D_Command(NavigationStore navigationStore, Lista_Zestawów lista_zestawów, Zestaw zestaw, string[] dane, StrefaNauki_1_ViewModel strefaNauki_1_ViewModel)
+        private StrefaNauki_2_ViewModel _strefaNauki_2_ViewModel;
+        public StrefaNauki_2_Zatwierdź_Command(NavigationStore navigationStore, Lista_Zestawów lista_zestawów, Zestaw zestaw, StrefaNauki_2_ViewModel strefaNauki_2_ViewModel)
         {
             _navigationStore = navigationStore;
             _lista_zestawów = lista_zestawów;
             _zestaw = zestaw;
-            _dane = dane;
-            _strefaNauki_1_ViewModel = strefaNauki_1_ViewModel;
+            _strefaNauki_2_ViewModel = strefaNauki_2_ViewModel;
         }
         public override void Execute(object parameter)
         {
-            if (_lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].UdzielOdpowiedź(_dane[3]))
+            if (_lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].UdzielOdpowiedź(_strefaNauki_2_ViewModel.Strefa_Nauki_2_Odpowiedź))
             {
-                _strefaNauki_1_ViewModel.Strefa_Nauki_1_PoprawnośćOdpowiedzi = "Poprawnie Udzielono Odpowiedzi!";
+                _strefaNauki_2_ViewModel.Strefa_Nauki_2_PoprawnośćOdpowiedzi = "Poprawnie Udzielono Odpowiedzi!";
                 
             }
             else
             {
-                _strefaNauki_1_ViewModel.Strefa_Nauki_1_PoprawnośćOdpowiedzi = "Błędnie Udzielono Odpowiedzi!";
+                _strefaNauki_2_ViewModel.Strefa_Nauki_2_PoprawnośćOdpowiedzi = "Błędnie Udzielono Odpowiedzi!";
                 
             }
             string[] dane = _lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].GenerujEtap();

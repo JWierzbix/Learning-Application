@@ -29,7 +29,7 @@ namespace LearningApplication.Commands
             }
             else if (dane.Length == 0)
             {
-                _navigationStore.CurrentViewModel = new StrefaNauki_2_ViewModel(_navigationStore, _lista_zestawów, _zestaw, dane);
+                _navigationStore.CurrentViewModel = new StrefaNauki_2_ViewModel(_navigationStore, _lista_zestawów, _zestaw);
             }
             else if (dane.Length == 2)
             {
