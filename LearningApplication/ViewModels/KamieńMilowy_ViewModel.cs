@@ -1,4 +1,5 @@
-﻿using LearningApplication.Models;
+﻿using LearningApplication.Commands;
+using LearningApplication.Models;
 using LearningApplication.Stores;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,20 @@ namespace LearningApplication.ViewModels
             _navigationStore = navigationStore;
             _lista_zestawów = lista_zestawów;
             _zestaw = zestaw;
-        }      
-        public string Kamień_Milowy_Nazwa { get; }
+            KamieńMilowy_NazwaZestawu = zestaw.nazwa_zestawu;
+            Kamień_Milowy_Kontynuuj = new KamieńMilowy_KontynuujPrzycisk_Command(navigationStore, lista_zestawów, zestaw);
+            Kamień_Milowy_Powrót_Przycisk = new StrefaNauki_1_Powrót_Command(navigationStore, lista_zestawów);
+        }
+        private string _kamieńMilowy_NazwaZeastawu;
+        public string KamieńMilowy_NazwaZestawu
+        {
+            get => _kamieńMilowy_NazwaZeastawu;
+            set
+            {
+                _kamieńMilowy_NazwaZeastawu = value;
+                OnPropertyChanged(nameof(KamieńMilowy_NazwaZestawu));
+            }
+        }        
         public ICommand Kamień_Milowy_Powrót_Przycisk { get; }
         public ICommand Kamień_Milowy_Kontynuuj { get; }
 

@@ -62,6 +62,7 @@
     <Compile Include="Commands\EdytujZestaw_PrzyciskZapisz_Command.cs" />
     <Compile Include="Commands\EdytujZestaw_Zapisz_Command.cs" />
     <Compile Include="Commands\Fiszka_ViewModel_UsuńCommand.cs" />
+    <Compile Include="Commands\KamieńMilowy_KontynuujPrzycisk_Command.cs" />
     <Compile Include="Commands\Lista_Zestawów_PowrótCommand.cs" />
     <Compile Include="Commands\StrefaNauki_1_Odpowiedź_A_Command.cs" />
     <Compile Include="Commands\StrefaNauki_1_Odpowiedź_B_Command.cs" />
@@ -74,6 +75,8 @@
     <Compile Include="Commands\StwórzZestaw_ViewModel_AnulujCommand.cs" />
     <Compile Include="Commands\Stwórz_Zestaw_PrzyciskDodajFiszkęCommand.cs" />
     <Compile Include="Commands\Stwórz_Zestaw_PrzyciskStwórzCommand.cs" />
+    <Compile Include="Commands\ZakończenieZestawu_PowrótDoMenu_Command.cs" />
+    <Compile Include="Commands\ZakończenieZestaw_UczSięOdNowa_Command.cs" />
     <Compile Include="Commands\Zestaw_ViewModel_Edytuj_Command.cs" />
     <Compile Include="Commands\Zestaw_ViewModel_UczSię_Command.cs" />
     <Compile Include="Commands\Zestaw_ViewModel_Usuń_Command.cs" />

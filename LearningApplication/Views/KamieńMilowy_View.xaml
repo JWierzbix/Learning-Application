@@ -39,7 +39,7 @@
                 Margin="40 10 0 0"
                 />
             <TextBlock                
-                Text="{Binding Kamień_Milowy_Nazwa}"
+                Text="{Binding KamieńMilowy_NazwaZestawu}"
                 FontSize="19"
                 Grid.Column="2"
                 Margin="10 10 0 0"

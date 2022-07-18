@@ -12,11 +12,11 @@ namespace LearningApplication.Models
         public string nazwa_zestawu { get; set; }
         public List<Fiszka> lista_fiszek;
         private DateTime data_utworzenia;
-        public DateTime Data_Utworzenia { get; }
+        public DateTime Data_Utworzenia { get => data_używania; }
         private DateTime data_używania;
-        public DateTime Data_Używania { get; }
+        public DateTime Data_Używania { get => data_używania; }
         private DateTime data_edytowania;
-        public DateTime Data_Edytowania { get; }
+        public DateTime Data_Edytowania { get => data_edytowania; }
         public Zestaw(string nazwa_zestawu, List<Fiszka> lista_fiszek)
         {
             this.nazwa_zestawu = nazwa_zestawu;//ważne aby zestaw przy tworzeniu miał unikalną nazwę
@@ -48,6 +48,8 @@ namespace LearningApplication.Models
             {
                 f.poziom_nauczenia = 0;
             }
+            Pula_Fiszek = new List<Fiszka>();
+            Runda = new List<Fiszka>();
         }                    
         public void Zmień_Nazwę(string nowa_nazwa)
         {
