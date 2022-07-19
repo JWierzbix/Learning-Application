@@ -67,12 +67,14 @@ namespace LearningApplication.Models
         private int licznik_rundy;
         private Fiszka fiszka;//fiszka, którą obecnie się uczysz     
         private string pojęcie;    
-        private string _odpowiedź;
+        private string _odpowiedź;        
+        public string Odpowiedź { get; set; }
         public string Pojęcie => pojęcie;
         public bool UdzielOdpowiedź(string odpowiedź)
         {
             if (_odpowiedź == odpowiedź)//uaktualniamy poziom znajomości fiszki w każdej kolekcji
             {
+                Odpowiedź = _odpowiedź;
                 foreach(var item in lista_fiszek)
                 {
                     if(item.pierwsza_strona==fiszka.pierwsza_strona && item.druga_strona == fiszka.druga_strona)
@@ -85,6 +87,7 @@ namespace LearningApplication.Models
             }
             else if (fiszka.poziom_nauczenia > 0)
             {
+                Odpowiedź = _odpowiedź;
                 foreach (var item in lista_fiszek)
                 {
                     if (item.pierwsza_strona == fiszka.pierwsza_strona && item.druga_strona == fiszka.druga_strona)
@@ -97,6 +100,7 @@ namespace LearningApplication.Models
             }
             else
             {
+                Odpowiedź = _odpowiedź;
                 return false;
             }
         }

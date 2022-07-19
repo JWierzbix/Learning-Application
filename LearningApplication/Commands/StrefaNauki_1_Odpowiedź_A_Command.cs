@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace LearningApplication.Commands
 {
@@ -26,8 +27,11 @@ namespace LearningApplication.Commands
             _strefaNauki_1_ViewModel = strefaNauki_1_ViewModel;           
         }        
         public override void Execute(object parameter)
-        {
-            _lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].UdzielOdpowiedź(_dane[0]);
+        {            
+            if (!_lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].UdzielOdpowiedź(_dane[0]))
+            {                
+                MessageBox.Show($"Poprawna Odppowiedź: {_zestaw.Odpowiedź}","BŁĘDNA ODPOWIEDŹ",MessageBoxButton.OK,MessageBoxImage.Information);
+            }
             string[] dane = _lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].GenerujEtap();
             if (dane.Length == 4)
             {
