@@ -19,6 +19,14 @@ namespace LearningApplication.ViewModels
         public ICommand Zestaw_ViewModel_Edytuj { get; }
         public ICommand Zestaw_ViewModel_Usuń { get; }
         public string Zestaw_ViewModel_NazwaZestawu => _zestaw.nazwa_zestawu;
+        public double PoziomUkończenia
+        {
+            get
+            {
+                if (_zestaw.lista_fiszek.Count != 0) return _zestaw.Poziom_Ukończenia();
+                else return 0;                
+            }
+        }
         public Zestaw_ViewModel(Models.Zestaw zestaw, NavigationStore navigationStore,Lista_Zestawów lista_zestawów)
         {
             _zestaw = zestaw;            

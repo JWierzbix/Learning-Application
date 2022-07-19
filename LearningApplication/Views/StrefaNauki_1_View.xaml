@@ -88,8 +88,8 @@
                         Width="800"                        
                         />
         </StackPanel>
-        <Label
-            Content="{Binding Strefa_Nauki_1_PoprawnośćOdpowiedzi}"
+        <TextBlock
+            Text="{Binding Strefa_Nauki_1_PoprawnośćOdpowiedzi, UpdateSourceTrigger=PropertyChanged}"
             Foreground="Green"
             FontSize="19"
             Grid.Row="3"
@@ -101,11 +101,21 @@
             FontSize="19"
             Margin="17 25 0 0" Grid.ColumnSpan="2"
             />
-        <ProgressBar             
-            Grid.Row="5"
+        <Grid
+            Grid.Row="5">
+            <ProgressBar     
+            Value="{Binding ObecnyProgres}"            
             Width="800"
             Height="30"
             Margin="10 15 60 1"
+            Name="progres"
             />
+            <TextBlock 
+            Text="{Binding ElementName=progres, Path=Value, StringFormat={}{0:0}%}"
+            HorizontalAlignment="Center"
+            Padding="0 15 0 0"
+            FontSize="20"
+            />
+        </Grid>
     </Grid>
 </UserControl>

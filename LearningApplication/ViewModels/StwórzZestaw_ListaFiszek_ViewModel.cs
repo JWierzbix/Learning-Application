@@ -51,7 +51,7 @@ namespace LearningApplication.ViewModels
                 OnPropertyChanged(nameof(Stwórz_Zestaw_DrugaStronaFiszki));
             }
         }
-        public StwórzZestaw_ListaFiszek_ViewModel(NavigationStore navigationStore, StwórzZestaw_ViewModel stwórzZestaw_ViewModel)
+        public StwórzZestaw_ListaFiszek_ViewModel(NavigationStore navigationStore)
         {
             _stwórzZestaw_ListaFiszek = new ObservableCollection<Fiszka_ViewModel>();            
             Stwórz_Zestaw_PrzyciskDodajFiszkę = new Stwórz_Zestaw_PrzyciskDodajFiszkęCommand(navigationStore,this);

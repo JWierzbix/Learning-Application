@@ -23,20 +23,11 @@ namespace LearningApplication.Commands
             _lista_zestawów = lista_zestawów;
             _zestaw = zestaw;
             _dane = dane;
-            _strefaNauki_1_ViewModel = strefaNauki_1_ViewModel;
+            _strefaNauki_1_ViewModel = strefaNauki_1_ViewModel;           
         }        
         public override void Execute(object parameter)
         {
-            if (_lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].UdzielOdpowiedź(_dane[0]))
-            {
-                _strefaNauki_1_ViewModel.Strefa_Nauki_1_PoprawnośćOdpowiedzi = "Poprawnie Udzielono Odpowiedzi!";
-                
-            }
-            else
-            {
-                _strefaNauki_1_ViewModel.Strefa_Nauki_1_PoprawnośćOdpowiedzi = "Błędnie Udzielono Odpowiedzi!";
-                
-            }
+            _lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].UdzielOdpowiedź(_dane[0]);
             string[] dane = _lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].GenerujEtap();
             if (dane.Length == 4)
             {

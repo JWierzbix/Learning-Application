@@ -25,16 +25,7 @@ namespace LearningApplication.Commands
         }
         public override void Execute(object parameter)
         {
-            if (_lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].UdzielOdpowiedź(_strefaNauki_2_ViewModel.Strefa_Nauki_2_Odpowiedź))
-            {
-                _strefaNauki_2_ViewModel.Strefa_Nauki_2_PoprawnośćOdpowiedzi = "Poprawnie Udzielono Odpowiedzi!";
-                
-            }
-            else
-            {
-                _strefaNauki_2_ViewModel.Strefa_Nauki_2_PoprawnośćOdpowiedzi = "Błędnie Udzielono Odpowiedzi!";
-                
-            }
+            _lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].UdzielOdpowiedź(_strefaNauki_2_ViewModel.Strefa_Nauki_2_Odpowiedź);
             string[] dane = _lista_zestawów.lista_zestawów[_zestaw.nazwa_zestawu].GenerujEtap();
             if (dane.Length == 4)
             {

@@ -30,17 +30,16 @@ namespace LearningApplication.Models
             pojęcie = "";
             licznik_rundy = 0;
         }
-        public int Poziom_Ukończenia()//zwracany w procentach 
+        public double Poziom_Ukończenia()//zwracany w procentach 
         {
-            int licznik = 0;
+            double licznik = 0;
             foreach (Fiszka f in lista_fiszek)
             {
-                if (f.poziom_nauczenia == 3) licznik++;
+                licznik += f.poziom_nauczenia;
             }
-            double procent = (double)licznik / lista_fiszek.Count;
-            return (int)(procent * 100);
-        }
-
+            double procent = licznik / (lista_fiszek.Count*4);
+            return (procent * 100);
+        }        
         /* STREFA TWORZENIA/EDYTOWANIA */
         public void WyczyśćPostępy()//poziom każdej wiszki ustawiany jest na 0
         {
@@ -80,23 +79,7 @@ namespace LearningApplication.Models
                         item.poziom_nauczenia++;
                         break;
                     }
-                }
-                foreach (var item in Pula_Fiszek)
-                {
-                    if (item.pierwsza_strona == fiszka.pierwsza_strona && item.druga_strona == fiszka.druga_strona)
-                    {
-                        item.poziom_nauczenia++;
-                        break;
-                    }
-                }
-                foreach (var item in Runda)
-                {
-                    if (item.pierwsza_strona == fiszka.pierwsza_strona && item.druga_strona == fiszka.druga_strona)
-                    {
-                        item.poziom_nauczenia--;
-                        break;
-                    }
-                }
+                }                
                 return true;
             }
             else if (fiszka.poziom_nauczenia > 0)
@@ -108,23 +91,7 @@ namespace LearningApplication.Models
                         item.poziom_nauczenia--;
                         break;
                     }
-                }
-                foreach (var item in Pula_Fiszek)
-                {
-                    if (item.pierwsza_strona == fiszka.pierwsza_strona && item.druga_strona == fiszka.druga_strona)
-                    {
-                        item.poziom_nauczenia--;
-                        break;
-                    }
-                }
-                foreach (var item in Runda)
-                {
-                    if (item.pierwsza_strona == fiszka.pierwsza_strona && item.druga_strona == fiszka.druga_strona)
-                    {
-                        item.poziom_nauczenia--;
-                        break;
-                    }
-                }
+                }                
                 return false;
             }
             else

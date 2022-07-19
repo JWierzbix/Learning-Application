@@ -33,7 +33,7 @@ namespace LearningApplication.ViewModels
         public StwórzZestaw_ViewModel(NavigationStore navigationStore,Lista_Zestawów lista_zestawów )
         {
             _lista_zestawów = lista_zestawów;
-            StwórzZestaw_ListaFiszek = new StwórzZestaw_ListaFiszek_ViewModel(navigationStore,this);
+            StwórzZestaw_ListaFiszek = new StwórzZestaw_ListaFiszek_ViewModel(navigationStore);
             Stwórz_Zestaw_PrzyciskAnuluj = new StwórzZestaw_ViewModel_AnulujCommand(navigationStore, lista_zestawów);
             Stwórz_Zestaw_PrzyciskStwórz = new Stwórz_Zestaw_PrzyciskStwórzCommand(navigationStore, lista_zestawów, this);            
         }

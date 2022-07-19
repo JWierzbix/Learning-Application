@@ -24,6 +24,17 @@ namespace LearningApplication.ViewModels
             Strefa_Nauki_2_Słowo = _zestaw.Pojęcie;
             Strefa_Nauki_2_Zatwierdź = new StrefaNauki_2_Zatwierdź_Command(navigationStore, lista_zestawów, zestaw, this);
             Strefa_Nauki_2_Powrót = new StrefaNauki_1_Powrót_Command(navigationStore, lista_zestawów);
+            ObecnyProgres = lista_zestawów.lista_zestawów[zestaw.nazwa_zestawu].Poziom_Ukończenia();
+        }
+        private double _obecnyProgres;
+        public double ObecnyProgres
+        {
+            get { return _obecnyProgres; }
+            set
+            {
+                _obecnyProgres = value;
+                OnPropertyChanged(nameof(ObecnyProgres));
+            }
         }
         private string _strefa_nauki_2_słowo;
         public string Strefa_Nauki_2_Słowo

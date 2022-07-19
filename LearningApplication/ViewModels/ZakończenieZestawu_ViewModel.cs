@@ -24,6 +24,17 @@ namespace LearningApplication.ViewModels
             Zakończenie_Zestawu_PowrótDoListyZestawów = new StrefaNauki_1_Powrót_Command(navigationStore,lista_zestawów);
             Zakończenie_Zestawu_PowrótDoMenu = new ZakończenieZestawu_PowrótDoMenu_Command(navigationStore, lista_zestawów);
             Zakończenie_Zestawu_UczSięOdNowa = new ZakończenieZestaw_UczSięOdNowa_Command(navigationStore,lista_zestawów,zestaw);
+            ObecnyProgres = lista_zestawów.lista_zestawów[zestaw.nazwa_zestawu].Poziom_Ukończenia();
+        }
+        private double _obecnyProgres;
+        public double ObecnyProgres
+        {
+            get { return _obecnyProgres; }
+            set
+            {
+                _obecnyProgres = value;
+                OnPropertyChanged(nameof(ObecnyProgres));
+            }
         }
         private string zakończenie_Zestawu_NazwaZestawu;
         public string Zakończenie_Zestawu_NazwaZestawu

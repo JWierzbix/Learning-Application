@@ -23,6 +23,17 @@ namespace LearningApplication.ViewModels
             KamieńMilowy_NazwaZestawu = zestaw.nazwa_zestawu;
             Kamień_Milowy_Kontynuuj = new KamieńMilowy_KontynuujPrzycisk_Command(navigationStore, lista_zestawów, zestaw);
             Kamień_Milowy_Powrót_Przycisk = new StrefaNauki_1_Powrót_Command(navigationStore, lista_zestawów);
+            ObecnyProgres = lista_zestawów.lista_zestawów[zestaw.nazwa_zestawu].Poziom_Ukończenia();
+        }
+        private double _obecnyProgres;
+        public double ObecnyProgres
+        {
+            get { return _obecnyProgres; }
+            set
+            {
+                _obecnyProgres = value;
+                OnPropertyChanged(nameof(ObecnyProgres));
+            }
         }
         private string _kamieńMilowy_NazwaZeastawu;
         public string KamieńMilowy_NazwaZestawu

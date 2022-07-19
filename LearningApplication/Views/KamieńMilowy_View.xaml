@@ -64,16 +64,27 @@
                 Height="35"
                 />        
         <TextBlock 
-            Grid.Row="5"
+            Grid.Row="3"
             Text="Postęp W Nauce"
             FontSize="19"
             Margin="20 200 0 0" Grid.ColumnSpan="2"
             />
-        <ProgressBar             
-            Grid.Row="6"
+        <Grid
+            Grid.Row="4">
+            <ProgressBar     
+            Value="{Binding ObecnyProgres}"            
             Width="800"
             Height="30"
-            Margin="10 240 60 1"
+            Margin="10 15 60 1"
+            Name="progres"
             />
+            <TextBlock 
+            Text="{Binding ElementName=progres, Path=Value, StringFormat={}{0:0}%}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Padding="0 10 0 0"
+            FontSize="20"
+            />
+        </Grid>
     </Grid>
 </UserControl>

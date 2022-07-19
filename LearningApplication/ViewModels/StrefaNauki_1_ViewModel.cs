@@ -28,16 +28,27 @@ namespace LearningApplication.ViewModels
             Strefa_Nauki_1_Odpowiedź_B_Text = "B. " + dane[1];
             Strefa_Nauki_1_Odpowiedź_C_Text = "C. " + dane[2];
             Strefa_Nauki_1_Odpowiedź_D_Text = "D. " + dane[3];
-            Strefa_Nauki_1_NazwaZestawu = zestaw.nazwa_zestawu;
-            _strefa_Nauki_1_PoprawnośćOdpowiedzi = "";
+            Strefa_Nauki_1_NazwaZestawu = zestaw.nazwa_zestawu;            
             //komendy
             Strefa_Nauki_1_Odpowiedź_A_Przycisk = new StrefaNauki_1_Odpowiedź_A_Command(navigationStore, lista_zestawów, zestaw, dane,this);
             Strefa_Nauki_1_Odpowiedź_B_Przycisk = new StrefaNauki_1_Odpowiedź_B_Command(navigationStore, lista_zestawów, zestaw, dane,this);
             Strefa_Nauki_1_Odpowiedź_C_Przycisk = new StrefaNauki_1_Odpowiedź_C_Command(navigationStore, lista_zestawów, zestaw, dane,this);
             Strefa_Nauki_1_Odpowiedź_D_Przycisk = new StrefaNauki_1_Odpowiedź_D_Command(navigationStore, lista_zestawów, zestaw, dane,this);
             Strefa_Nauki_1_Powrót = new StrefaNauki_1_Powrót_Command(navigationStore, lista_zestawów);
-        }      
-
+            //postępy
+            ObecnyProgres = lista_zestawów.lista_zestawów[zestaw.nazwa_zestawu].Poziom_Ukończenia();
+        }
+        //ProgressBar
+        private double _obecnyProgres;
+        public double ObecnyProgres
+        {
+            get { return _obecnyProgres; }
+            set
+            {
+                _obecnyProgres = value;
+                OnPropertyChanged(nameof(ObecnyProgres));
+            }
+        }
         private string _strefa_nauki_1_słowo;
         public string Strefa_Nauki_1_Słowo
         {
