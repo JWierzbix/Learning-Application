@@ -1,4 +1,5 @@
-﻿using LearningApplication.Helpers;
+﻿using LearningApplication.Exceptions;
+using LearningApplication.Helpers;
 using LearningApplication.Models;
 using LearningApplication.Stores;
 using LearningApplication.ViewModels;
@@ -8,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace LearningApplication.Commands
 {
@@ -27,8 +29,16 @@ namespace LearningApplication.Commands
         {
             //tworzymy odpowiedni typ listy fiszek do dodawania
             List<Fiszka> nowa_lista = Function.ZamieńNaListęFiszek(_stwórzZestaw_ViewModel.StwórzZestaw_ListaFiszek.StwórzZestaw_ListaFiszek);
-            _lista_zestawów.Utwórz_Zestaw(_stwórzZestaw_ViewModel.Stwórz_Zestaw_NazwaZestawu,nowa_lista);
-            _navigationStore.CurrentViewModel = new ListaZestawów_ViewModel(_navigationStore, _lista_zestawów);
+            try
+            {
+                _lista_zestawów.Utwórz_Zestaw(_stwórzZestaw_ViewModel.Stwórz_Zestaw_NazwaZestawu, nowa_lista);
+                _navigationStore.CurrentViewModel = new ListaZestawów_ViewModel(_navigationStore, _lista_zestawów);
+            }
+            catch(DuplikatException)
+            {
+                MessageBox.Show("Zestaw o takiej nazwie został już utworzony. Prosimy o zmianę nazwy zestawu.","Błąd",MessageBoxButton.OK,MessageBoxImage.Error);
+            }       
+            
         }
         
     }

@@ -19,8 +19,32 @@
                                             FontSize="18"                                            
                                             Padding="2 2 0 2"
                                             Margin="0 2 30 0"
-                                            Width="350"
+                                            MinWidth="250"
                                             />
+                    <Border 
+                            BorderBrush="Gray"
+                            Background="LightGreen"
+                            BorderThickness="2"
+                            Margin= "0 0 5 0"
+                            >
+                        <StackPanel 
+                            Orientation="Horizontal"                            
+                            >
+                            <TextBlock 
+                                            FontSize="18"
+                                            Text="Liczność:"
+                                            Margin="0 0 4 0"
+                                            Padding="4 3 0 2"
+                                            />
+                            <TextBlock 
+                                            FontSize="18"
+                                            Text="{Binding Liczność}"
+                                            Foreground="Green"
+                                            Margin="0 0 2 0"
+                                            Padding="0 3 0 2"
+                                            />                            
+                        </StackPanel>
+                    </Border>
                     <Border 
                             BorderBrush="Gray"
                             Background="LightGreen"

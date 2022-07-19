@@ -1,4 +1,5 @@
-﻿using LearningApplication.ViewModels;
+﻿using LearningApplication.Exceptions;
+using LearningApplication.ViewModels;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -40,7 +41,7 @@ namespace LearningApplication.Models
             }
             else
             {
-                return false;
+                throw new DuplikatException(lista_zestawów[nazwa_zestawu],nazwa_zestawu);
             }
         }
         public bool Edytuj_Zestaw(string stara_nazwa_zestawu,string nowa_nazwa_zestawu, List<Fiszka> lista_fiszek)

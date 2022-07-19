@@ -30,7 +30,7 @@
                 FontSize="19"
                 Width="100"
                 Grid.Column="0"
-                Margin="20 10 0 0"
+                Margin="20 10 0 0"                
                 />
             <TextBlock
                 Text="Uczysz się:"
@@ -45,48 +45,85 @@
                 Margin="10 10 0 0"
                 />
         </Grid>
-        <Label
+        <TextBlock
             Grid.Row="1"
-            Content="{Binding Strefa_Nauki_1_Słowo}"
+            Text="{Binding Strefa_Nauki_1_Słowo}"
             FontSize="19"
             Margin="0 50 0 10"
-            Padding="40 4 0 4"
+            Padding="40 4 5 4"
             Width="900"
             Background="#FFC000" Grid.ColumnSpan="2"
+            TextWrapping="Wrap"
             />
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
             <Button 
-                        Command="{Binding Strefa_Nauki_1_Odpowiedź_A_Przycisk}"
-                        Content="{Binding Strefa_Nauki_1_Odpowiedź_A_Text}" 
+                        Command="{Binding Strefa_Nauki_1_Odpowiedź_A_Przycisk}"                          
                         FontSize="19"             
-                        Padding="0 3 630 3"
+                        Padding="0 3 0 3"
                         Margin="0 5 50 15"
-                        Width="800"                        
-                        />
+                        Width="800"
+                        Name="odp_A"
+                        >
+                <TextBlock 
+                    Text= "{Binding Strefa_Nauki_1_Odpowiedź_A_Text}"
+                    Width="800"
+                    HorizontalAlignment="Left"       
+                    Padding="50 0 0 0"                    
+                    MaxHeight="50"
+                    TextWrapping="Wrap"
+                 />
+            </Button>
             <Button 
-                        Command="{Binding Strefa_Nauki_1_Odpowiedź_B_Przycisk}"
-                        Content="{Binding Strefa_Nauki_1_Odpowiedź_B_Text}" 
+                        Command="{Binding Strefa_Nauki_1_Odpowiedź_B_Przycisk}"                         
                         FontSize="19"               
-                        Padding="0 3 630 3"
+                        Padding="0 3 0 3"
                         Margin="0 0 50 15"
-                        Width="800"                        
-                        />
+                        Width="800"
+                        Name="odp_B"
+                        >
+                <TextBlock 
+                    Text="{Binding Strefa_Nauki_1_Odpowiedź_B_Text}"                    
+                    Width="800"
+                    HorizontalAlignment="Left"       
+                    Padding="50 0 0 0"
+                    MaxHeight="50"
+                    TextWrapping="Wrap"
+                    />
+            </Button>
             <Button 
-                        Command="{Binding Strefa_Nauki_1_Odpowiedź_C_Przycisk}"
-                        Content="{Binding Strefa_Nauki_1_Odpowiedź_C_Text}" 
+                        Command="{Binding Strefa_Nauki_1_Odpowiedź_C_Przycisk}"                        
                         FontSize="19"               
-                        Padding="0 3 630 3"
+                        Padding="0 3 0 3"
                         Margin="0 0 50 15"   
-                        Width="800"                        
-                        />
+                        Width="800" 
+                        Name="odp_C"
+                        >
+                <TextBlock 
+                    Text="{Binding Strefa_Nauki_1_Odpowiedź_C_Text}"                     
+                    Width="800"
+                    HorizontalAlignment="Left"       
+                    Padding="50 0 0 0"
+                    MaxHeight="50"
+                    TextWrapping="Wrap"
+                    />
+            </Button>
             <Button 
-                        Command="{Binding Strefa_Nauki_1_Odpowiedź_D_Przycisk}"
-                        Content="{Binding Strefa_Nauki_1_Odpowiedź_D_Text}" 
+                        Command="{Binding Strefa_Nauki_1_Odpowiedź_D_Przycisk}"                        
                         FontSize="19"               
-                        Padding="0 3 630 3"
+                        Padding="0 3 0 3"
                         Margin="0 0 50 15"  
-                        Width="800"                        
-                        />
+                        Width="800"
+                        Name="odp_D"
+                        >
+                <TextBlock 
+                    Text="{Binding Strefa_Nauki_1_Odpowiedź_D_Text}"                     
+                    Width="800"
+                    HorizontalAlignment="Left"       
+                    Padding="50 0 0 0"
+                    MaxHeight="50"
+                    TextWrapping="Wrap"
+                    />
+            </Button>
         </StackPanel>
         <TextBlock
             Text="{Binding Strefa_Nauki_1_PoprawnośćOdpowiedzi, UpdateSourceTrigger=PropertyChanged}"

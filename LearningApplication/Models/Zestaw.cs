@@ -1,4 +1,5 @@
-﻿using LearningApplication.ViewModels;
+﻿using LearningApplication.Exceptions;
+using LearningApplication.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -119,7 +120,7 @@ namespace LearningApplication.Models
         public string[] GenerujEtap()
         {
             //w zestawie muszą się znajdować przynajmniej 4 fiszki, ponieważ odpowiedzi abcd musza być 4
-            if (lista_fiszek.Count < 4) throw new Exception("Aby uczyć się zestawu muszą znajdować się w nim więcej niż 4 fiszki");
+            if (lista_fiszek.Count < 4) throw new ZaMałoFiszekException();
 
             UaktualnijPulęFiszek();
             if(Runda.Count == 0) { GenerujRundę(); }

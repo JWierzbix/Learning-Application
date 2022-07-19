@@ -93,6 +93,8 @@
     <Compile Include="Components\StwórzZestaw_ListaFiszek_Component.xaml.cs">
       <DependentUpon>StwórzZestaw_ListaFiszek_Component.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\DuplikatException.cs" />
+    <Compile Include="Exceptions\ZaMałoFiszekException.cs" />
     <Compile Include="Helpers\Function.cs" />
     <Compile Include="Stores\NavigationStore.cs" />
     <Compile Include="ViewModels\EdytujZestaw_ListaFiszek_ViewModel.cs" />

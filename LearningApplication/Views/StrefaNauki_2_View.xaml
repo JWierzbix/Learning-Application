@@ -46,14 +46,16 @@
                 Margin="10 10 0 0"
                 />
         </Grid>
-        <Label
+        <TextBlock
             Grid.Row="1"
-            Content="{Binding Strefa_Nauki_2_Słowo}"
+            Text="{Binding Strefa_Nauki_2_Słowo}"
             FontSize="19"
-            Margin="0 50 0 10"
+            Margin="0 50 0 10"                                    
             Padding="40 4 0 4"
             Width="900"
             Background="#FFC000" Grid.ColumnSpan="2"
+            TextWrapping="Wrap"
+            MaxHeight="50"
             />        
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -87,10 +89,11 @@
             Grid.Row="5"
             Text="Postęp W Nauce"
             FontSize="19"
-            Margin="17 150 0 0" Grid.ColumnSpan="2"
+            Margin="17 130 0 0" Grid.ColumnSpan="2"
             />
-        <Grid
-            Grid.Row="6">
+        <Grid 
+            Grid.Row="6"            
+            >
             <ProgressBar     
             Value="{Binding ObecnyProgres}"            
             Width="800"

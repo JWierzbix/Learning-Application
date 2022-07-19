@@ -35,7 +35,7 @@
                     />
                 <Button     
                     Command="{Binding Strona_Główna_WybierzZestaw}"
-                    Content="Ucz Się Zestawu"
+                    Content="Lista Zestawów"
                     FontSize="19"
                     Height="110"
                     Margin="0 0 0 0"

@@ -19,7 +19,7 @@
                                             FontSize="18"                                            
                                             Padding="0 2 0 2"
                                             Margin="0 2 25 0"
-                                            Width="70"
+                                            Width="320"
                                             />
                     <Border 
                             BorderBrush="Gray"
@@ -59,7 +59,7 @@
                                             Margin="0 0 3 0"
                                             FontSize="18"
                                             Content="Ucz się" />
-                    <Button 
+                    <!-- <Button 
                                             Command="{Binding Zestaw_ViewModel_WyczyśćPostępy}"
                                             Background="#FFC000"
                                             Padding="3"  
@@ -78,7 +78,7 @@
                                             Background="#FFC000"
                                             Padding="3"                                            
                                             FontSize="18"
-                                            Content="Usuń" />
+                                            Content="Usuń" /> -->
                 </StackPanel>
             </DataTemplate>
         </ListView.ItemTemplate>

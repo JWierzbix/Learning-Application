@@ -27,6 +27,7 @@ namespace LearningApplication.ViewModels
                 else return 0;                
             }
         }
+        public int Liczność => _zestaw.lista_fiszek.Count;
         public Zestaw_ViewModel(Models.Zestaw zestaw, NavigationStore navigationStore,Lista_Zestawów lista_zestawów)
         {
             _zestaw = zestaw;            
